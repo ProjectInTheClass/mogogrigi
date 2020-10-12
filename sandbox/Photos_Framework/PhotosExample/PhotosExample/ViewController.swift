@@ -101,7 +101,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 
     }
     
-    // 포토라이브러리 연동하는 함수
+    // 포토라이브러리 연동하는 함수.
     func tableView(_ tableView:UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.fetchResult?.count ?? 0
     }
