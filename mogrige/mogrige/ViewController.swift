@@ -72,7 +72,7 @@ class ViewController: UIViewController {
                 })
                 cardFormatReset()
                 
-                // 화면 전환코드
+                // 화면 전환
                 let editorVC = self.storyboard?.instantiateViewController(withIdentifier: "editorVC")
                 editorVC?.modalTransitionStyle = .coverVertical
                 self.present(editorVC!, animated: true, completion: nil)
