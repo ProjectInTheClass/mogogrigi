@@ -16,41 +16,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="33" translatesAutoresizingMaskIntoConstraints="NO" id="4Me-hJ-EN0">
-                                <rect key="frame" x="100.5" y="683" width="213" height="42"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2n9-xa-vvu">
-                                        <rect key="frame" x="0.0" y="0.0" width="90" height="42"/>
-                                        <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="FYl-WM-GSA"/>
-                                            <constraint firstAttribute="height" constant="42" id="QjL-Ox-Tyd"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                        <state key="normal" title="Re-Pick">
-                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="rePick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JN1-6P-sNR"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9qf-fV-g7v">
-                                        <rect key="frame" x="123" y="0.0" width="90" height="42"/>
-                                        <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="Fe3-Se-Rfr"/>
-                                            <constraint firstAttribute="height" constant="42" id="kZ0-40-Cpx"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                        <state key="normal" title="Pick">
-                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
-                                        </state>
-                                        <connections>
-                                            <segue destination="LV5-Nx-cvj" kind="show" id="Ppx-2t-h7g"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0KB-Dd-5yc" userLabel="Card View">
                                 <rect key="frame" x="78" y="226" width="258" height="354"/>
                                 <subviews>
@@ -111,27 +76,13 @@
                                     <outletCollection property="gestureRecognizers" destination="h4O-Sc-ZiA" appends="YES" id="eXM-pY-pgA"/>
                                 </connections>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BOg-fp-3Lg">
-                                <rect key="frame" x="195" y="749" width="24" height="22"/>
-                                <state key="normal" title="reset" image="return" catalog="system"/>
-                                <connections>
-                                    <action selector="resetButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JCw-Cn-RaJ"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="4Me-hJ-EN0" secondAttribute="bottom" constant="88" id="4Wg-dh-Hxm"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4Me-hJ-EN0" secondAttribute="trailing" constant="100.5" id="INb-ME-6df"/>
-                            <constraint firstItem="BOg-fp-3Lg" firstAttribute="centerX" secondItem="4Me-hJ-EN0" secondAttribute="centerX" id="Pl5-lL-MRS"/>
                             <constraint firstItem="0KB-Dd-5yc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="78" id="TSm-3k-pOX"/>
                             <constraint firstAttribute="bottom" secondItem="0KB-Dd-5yc" secondAttribute="bottom" constant="316" id="bu3-yI-A6G"/>
-                            <constraint firstItem="4Me-hJ-EN0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100.5" id="dfo-iU-s3v"/>
                             <constraint firstItem="0KB-Dd-5yc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="182" id="hjc-C6-V4X"/>
-                            <constraint firstItem="0KB-Dd-5yc" firstAttribute="centerX" secondItem="4Me-hJ-EN0" secondAttribute="centerX" id="loL-Zq-cZa"/>
-                            <constraint firstItem="BOg-fp-3Lg" firstAttribute="top" secondItem="4Me-hJ-EN0" secondAttribute="bottom" constant="24" id="pTB-26-lH0"/>
-                            <constraint firstItem="BOg-fp-3Lg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="195" id="pky-ia-T6D"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" selectedImage="house.fill" id="caJ-4c-7PG"/>
@@ -155,7 +106,7 @@
         <!--Modal View Controller-->
         <scene sceneID="qYi-YY-nUd">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="LV5-Nx-cvj" customClass="ModalViewController" customModule="mogrige" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="editorVC" modalPresentationStyle="fullScreen" id="LV5-Nx-cvj" customClass="ModalViewController" customModule="mogrige" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Qds-mz-khB">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -369,7 +320,6 @@
         <image name="house" catalog="system" width="128" height="106"/>
         <image name="house.fill" catalog="system" width="128" height="106"/>
         <image name="plus" catalog="system" width="128" height="113"/>
-        <image name="return" catalog="system" width="128" height="101"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

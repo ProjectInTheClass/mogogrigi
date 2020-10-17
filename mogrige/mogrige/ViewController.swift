@@ -71,6 +71,12 @@ class ViewController: UIViewController {
                     card.center = CGPoint(x: card.center.x + 300, y: card.center.y + 61)
                 })
                 cardFormatReset()
+                
+                // 화면 전환
+                let editorVC = self.storyboard?.instantiateViewController(withIdentifier: "editorVC")
+                editorVC?.modalTransitionStyle = .coverVertical
+                self.present(editorVC!, animated: true, completion: nil)
+                
                 return
             } else {
                 cardFormatReset()
@@ -149,7 +155,7 @@ class ViewController: UIViewController {
 
         guard let vc = segue.destination as? ModalViewController else { return }
         
-        let selectedTitle:String! = "#\(pickedKeword[0]!),  #\(pickedKeword[1]!),  #\(pickedKeword[2]!)"
+        let selectedTitle:String! = "\(pickedKeword[0]!),  \(pickedKeword[1]!),  \(pickedKeword[2]!)"
 
         vc.selectedTitle = selectedTitle
         
