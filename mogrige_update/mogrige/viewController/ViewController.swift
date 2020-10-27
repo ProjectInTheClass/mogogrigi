@@ -23,7 +23,7 @@ class ViewController: UIViewController {
     }
     
     var divisor: CGFloat!
-    var lastKeywords: Array<Any> = []
+    var lastKeywords: Array<String> = []
     
     
     //swipe animation 구현
@@ -43,6 +43,7 @@ class ViewController: UIViewController {
             thumbImageView.alpha = 0
             card.transform = CGAffineTransform.identity
             animate()
+            // lastKeywords = [keyword01.text!, keyword02.text!, keyword03.text!]
         }
         
         
@@ -77,6 +78,7 @@ class ViewController: UIViewController {
                 self.present(modalVC!, animated: true, completion: nil)
                
                 cardFormatReset()
+                                
                 return
             } else {
                 cardFormatReset()
@@ -146,17 +148,18 @@ class ViewController: UIViewController {
     
     // 모달에 데이터 전달하기
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-
-        let pickedKeword = [keyword01.text, keyword02.text, keyword03.text]
+        
+        let pickedKeywords = [keyword01.text!, keyword02.text!, keyword03.text!]
 
         guard let vc = segue.destination as? ModalViewController else { return }
-        
-        let selectedTitle:String! = "\(pickedKeword[0]!),  \(pickedKeword[1]!),  \(pickedKeword[2]!)"
+
+        let selectedTitle:String! = "\(pickedKeywords[0]),  \(pickedKeywords[1]),  \(pickedKeywords[2])"
 
         vc.selectedTitle = selectedTitle
-        
+
     }
 
 
-}
 
+
+}
