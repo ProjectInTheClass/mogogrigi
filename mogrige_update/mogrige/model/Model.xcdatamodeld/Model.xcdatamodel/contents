@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17192" systemVersion="19H2" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Post_List" representedClassName="Post_List" syncable="YES">
+        <attribute name="colorChip01" optional="YES" attributeType="String"/>
+        <attribute name="colorChip02" optional="YES" attributeType="String"/>
+        <attribute name="colorChip03" optional="YES" attributeType="String"/>
+        <attribute name="image01" optional="YES" attributeType="String"/>
+        <attribute name="image02" optional="YES" attributeType="String"/>
+        <attribute name="image03" optional="YES" attributeType="String"/>
+        <attribute name="image04" optional="YES" attributeType="String"/>
+        <attribute name="image05" optional="YES" attributeType="String"/>
+        <attribute name="keyword01" optional="YES" attributeType="String"/>
+        <attribute name="keyword02" optional="YES" attributeType="String"/>
+        <attribute name="keyword03" optional="YES" attributeType="String"/>
+        <attribute name="likeArt" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="masterpiece" optional="YES" attributeType="String"/>
+        <attribute name="memo" optional="YES" attributeType="String"/>
+        <attribute name="postDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="subTitle" optional="YES" attributeType="String"/>
+    </entity>
+    <elements>
+        <element name="Post_List" positionX="-63" positionY="-18" width="128" height="283"/>
+    </elements>
+</model>

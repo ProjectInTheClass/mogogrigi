@@ -20,6 +20,9 @@
 		078955A7252C260600DB66E3 /* KeyListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078955A6252C260600DB66E3 /* KeyListTableViewCell.swift */; };
 		078955AC252C263A00DB66E3 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078955AB252C263A00DB66E3 /* DetailViewController.swift */; };
 		078955B1252C980200DB66E3 /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078955B0252C980100DB66E3 /* ModalViewController.swift */; };
+		07A1D9C32547D16000BB4B71 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 07A1D9C12547D16000BB4B71 /* Model.xcdatamodeld */; };
+		07A1D9C92547D52B00BB4B71 /* Post_List+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A1D9C72547D52B00BB4B71 /* Post_List+CoreDataClass.swift */; };
+		07A1D9CA2547D52B00BB4B71 /* Post_List+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A1D9C82547D52B00BB4B71 /* Post_List+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +62,9 @@
 		078955A6252C260600DB66E3 /* KeyListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyListTableViewCell.swift; sourceTree = "<group>"; };
 		078955AB252C263A00DB66E3 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		078955B0252C980100DB66E3 /* ModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
+		07A1D9C22547D16000BB4B71 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		07A1D9C72547D52B00BB4B71 /* Post_List+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Post_List+CoreDataClass.swift"; sourceTree = "<group>"; };
+		07A1D9C82547D52B00BB4B71 /* Post_List+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Post_List+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +147,9 @@
 			isa = PBXGroup;
 			children = (
 				070B1FE7251CA17C007342B8 /* model.swift */,
+				07A1D9C82547D52B00BB4B71 /* Post_List+CoreDataProperties.swift */,
+				07A1D9C72547D52B00BB4B71 /* Post_List+CoreDataClass.swift */,
+				07A1D9C12547D16000BB4B71 /* Model.xcdatamodeld */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -298,11 +307,14 @@
 			files = (
 				078955A2252C25B600DB66E3 /* KeyListTableViewController.swift in Sources */,
 				078955B1252C980200DB66E3 /* ModalViewController.swift in Sources */,
+				07A1D9C92547D52B00BB4B71 /* Post_List+CoreDataClass.swift in Sources */,
 				072FAB69253F1D2B0053983F /* ColorPickerViewController.swift in Sources */,
 				078955A7252C260600DB66E3 /* KeyListTableViewCell.swift in Sources */,
+				07A1D9CA2547D52B00BB4B71 /* Post_List+CoreDataProperties.swift in Sources */,
 				070B1FE8251CA17C007342B8 /* model.swift in Sources */,
 				070B1F96251B5FE9007342B8 /* ViewController.swift in Sources */,
 				070B1F92251B5FE9007342B8 /* AppDelegate.swift in Sources */,
+				07A1D9C32547D16000BB4B71 /* Model.xcdatamodeld in Sources */,
 				070B1F94251B5FE9007342B8 /* SceneDelegate.swift in Sources */,
 				078955AC252C263A00DB66E3 /* DetailViewController.swift in Sources */,
 			);
@@ -629,6 +641,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		07A1D9C12547D16000BB4B71 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				07A1D9C22547D16000BB4B71 /* Model.xcdatamodel */,
+			);
+			currentVersion = 07A1D9C22547D16000BB4B71 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 070B1F86251B5FE8007342B8 /* Project object */;
 }
