@@ -20,6 +20,10 @@
 		078955A7252C260600DB66E3 /* KeyListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078955A6252C260600DB66E3 /* KeyListTableViewCell.swift */; };
 		078955AC252C263A00DB66E3 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078955AB252C263A00DB66E3 /* DetailViewController.swift */; };
 		078955B1252C980200DB66E3 /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078955B0252C980100DB66E3 /* ModalViewController.swift */; };
+		AA16EC1E2548139000BB8859 /* NotoSerifKR-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = AA16EC1B2548138F00BB8859 /* NotoSerifKR-Regular.otf */; };
+		AA16EC1F2548139000BB8859 /* NotoSerifKR-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = AA16EC1C2548138F00BB8859 /* NotoSerifKR-Bold.otf */; };
+		AA16EC202548139000BB8859 /* NotoSerifCJKkr-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = AA16EC1D2548139000BB8859 /* NotoSerifCJKkr-SemiBold.otf */; };
+		AA16EC252548501600BB8859 /* MoodboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA16EC242548501600BB8859 /* MoodboardViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +63,10 @@
 		078955A6252C260600DB66E3 /* KeyListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyListTableViewCell.swift; sourceTree = "<group>"; };
 		078955AB252C263A00DB66E3 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		078955B0252C980100DB66E3 /* ModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
+		AA16EC1B2548138F00BB8859 /* NotoSerifKR-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSerifKR-Regular.otf"; sourceTree = "<group>"; };
+		AA16EC1C2548138F00BB8859 /* NotoSerifKR-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSerifKR-Bold.otf"; sourceTree = "<group>"; };
+		AA16EC1D2548139000BB8859 /* NotoSerifCJKkr-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSerifCJKkr-SemiBold.otf"; sourceTree = "<group>"; };
+		AA16EC242548501600BB8859 /* MoodboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodboardViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				070B1F90251B5FE9007342B8 /* mogrige */,
+				AA16EC1A2548134400BB8859 /* fonts */,
 				070B1FA7251B5FEB007342B8 /* mogrigeTests */,
 				070B1FB2251B5FEB007342B8 /* mogrigeUITests */,
 				070B1F8F251B5FE9007342B8 /* Products */,
@@ -154,6 +163,7 @@
 				078955A6252C260600DB66E3 /* KeyListTableViewCell.swift */,
 				078955AB252C263A00DB66E3 /* DetailViewController.swift */,
 				072FAB68253F1D2B0053983F /* ColorPickerViewController.swift */,
+				AA16EC242548501600BB8859 /* MoodboardViewController.swift */,
 			);
 			path = viewController;
 			sourceTree = "<group>";
@@ -165,6 +175,16 @@
 				070B1F93251B5FE9007342B8 /* SceneDelegate.swift */,
 			);
 			path = delegate;
+			sourceTree = "<group>";
+		};
+		AA16EC1A2548134400BB8859 /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				AA16EC1D2548139000BB8859 /* NotoSerifCJKkr-SemiBold.otf */,
+				AA16EC1C2548138F00BB8859 /* NotoSerifKR-Bold.otf */,
+				AA16EC1B2548138F00BB8859 /* NotoSerifKR-Regular.otf */,
+			);
+			path = fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -271,7 +291,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				070B1F9B251B5FEB007342B8 /* Assets.xcassets in Resources */,
+				AA16EC1E2548139000BB8859 /* NotoSerifKR-Regular.otf in Resources */,
 				070B1F99251B5FE9007342B8 /* Main.storyboard in Resources */,
+				AA16EC202548139000BB8859 /* NotoSerifCJKkr-SemiBold.otf in Resources */,
+				AA16EC1F2548139000BB8859 /* NotoSerifKR-Bold.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,6 +319,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA16EC252548501600BB8859 /* MoodboardViewController.swift in Sources */,
 				078955A2252C25B600DB66E3 /* KeyListTableViewController.swift in Sources */,
 				078955B1252C980200DB66E3 /* ModalViewController.swift in Sources */,
 				072FAB69253F1D2B0053983F /* ColorPickerViewController.swift in Sources */,
