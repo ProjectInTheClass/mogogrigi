@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var keyword03: UILabel!
     @IBOutlet weak var thumbImageView: UIImageView!
     @IBAction func resetButton(_ sender: Any) {
-        resetCard()
+        // resetCard()
     }
     
     @IBAction func closeModal(
@@ -42,6 +42,7 @@ class ViewController: UIViewController {
             card.center = self.view.center
             thumbImageView.alpha = 0
             card.transform = CGAffineTransform.identity
+            animate()
         }
         
         
@@ -61,7 +62,7 @@ class ViewController: UIViewController {
                 UIView.animate(withDuration: 0.3, animations: {
                     card.center = CGPoint(x: card.center.x - 300, y: card.center.y + 61)
                 })
-                lastKeywords = [keyword01.text!, keyword02.text!, keyword03.text!]
+                // lastKeywords = [keyword01.text!, keyword02.text!, keyword03.text!]
                 cardFormatReset()
                 randomPicked()
                 return
@@ -77,6 +78,8 @@ class ViewController: UIViewController {
                
                 cardFormatReset()
                 return
+            } else {
+                cardFormatReset()
             }
         }
     }
@@ -107,6 +110,7 @@ class ViewController: UIViewController {
     }
     
     //직전 단어 다시 보기 버튼
+    /*
     func resetCard() {
         animate()
         self.thumbImageView.alpha = 0
@@ -117,7 +121,7 @@ class ViewController: UIViewController {
         keyword02.text = lastKeywords[1] as? String
         keyword03.text = lastKeywords[2] as? String
     }
-    
+    */
     
     override func viewDidLoad() {
         super.viewDidLoad()

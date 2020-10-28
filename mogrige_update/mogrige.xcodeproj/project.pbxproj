@@ -20,6 +20,9 @@
 		078955A7252C260600DB66E3 /* KeyListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078955A6252C260600DB66E3 /* KeyListTableViewCell.swift */; };
 		078955AC252C263A00DB66E3 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078955AB252C263A00DB66E3 /* DetailViewController.swift */; };
 		078955B1252C980200DB66E3 /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078955B0252C980100DB66E3 /* ModalViewController.swift */; };
+		AA400B252549550D00B9EF66 /* Moodboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA400B242549550D00B9EF66 /* Moodboard.storyboard */; };
+		AA400B2D2549552C00B9EF66 /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = AA400B2C2549552C00B9EF66 /* fonts */; };
+		AA400B322549566300B9EF66 /* MoodboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA400B312549566300B9EF66 /* MoodboardViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +62,9 @@
 		078955A6252C260600DB66E3 /* KeyListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyListTableViewCell.swift; sourceTree = "<group>"; };
 		078955AB252C263A00DB66E3 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		078955B0252C980100DB66E3 /* ModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
+		AA400B242549550D00B9EF66 /* Moodboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Moodboard.storyboard; sourceTree = "<group>"; };
+		AA400B2C2549552C00B9EF66 /* fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fonts; sourceTree = "<group>"; };
+		AA400B312549566300B9EF66 /* MoodboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodboardViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				070B1F90251B5FE9007342B8 /* mogrige */,
+				AA400B2C2549552C00B9EF66 /* fonts */,
 				070B1FA7251B5FEB007342B8 /* mogrigeTests */,
 				070B1FB2251B5FEB007342B8 /* mogrigeUITests */,
 				070B1F8F251B5FE9007342B8 /* Products */,
@@ -113,6 +120,8 @@
 				072FAB58253DBDFE0053983F /* delegate */,
 				072FAB53253DBDB80053983F /* viewController */,
 				070B1F97251B5FE9007342B8 /* Main.storyboard */,
+				AA400B242549550D00B9EF66 /* Moodboard.storyboard */,
+				AA400B312549566300B9EF66 /* MoodboardViewController.swift */,
 				070B1F9A251B5FEB007342B8 /* Assets.xcassets */,
 				070B1F9F251B5FEB007342B8 /* Info.plist */,
 			);
@@ -271,7 +280,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				070B1F9B251B5FEB007342B8 /* Assets.xcassets in Resources */,
+				AA400B252549550D00B9EF66 /* Moodboard.storyboard in Resources */,
 				070B1F99251B5FE9007342B8 /* Main.storyboard in Resources */,
+				AA400B2D2549552C00B9EF66 /* fonts in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,6 +307,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA400B322549566300B9EF66 /* MoodboardViewController.swift in Sources */,
 				078955A2252C25B600DB66E3 /* KeyListTableViewController.swift in Sources */,
 				078955B1252C980200DB66E3 /* ModalViewController.swift in Sources */,
 				072FAB69253F1D2B0053983F /* ColorPickerViewController.swift in Sources */,
