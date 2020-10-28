@@ -6,8 +6,9 @@
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>UIAppFonts</key>
 	<array>
-		<string>NotoSerifKR-Bold</string>
-		<string>NotoSerifKR-Regular</string>
+		<string>NotoSerifCJKkr-Bold</string>
+		<string>NotoSerifCJKkr-Medium</string>
+		<string>NotoSerifCJKkr-Regular</string>
 		<string>NotoSerifCJKkr-SemiBold</string>
 	</array>
 	<key>CFBundleExecutable</key>
