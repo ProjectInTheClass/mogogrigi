@@ -164,7 +164,7 @@
                                 <rect key="frame" x="144.66666666666666" y="612" width="102" height="30"/>
                                 <state key="normal" title="Create a board"/>
                                 <connections>
-                                    <segue destination="D7X-Sq-vRk" kind="show" id="egd-sV-bqj"/>
+                                    <segue destination="6Eq-5Z-aL0" kind="show" id="UV8-Sg-Jpr"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Title &amp; Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CT6-3m-MMZ">
@@ -269,10 +269,10 @@
         <!--DetailMoodboard-->
         <scene sceneID="4TK-iw-J7Q">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PZJ-rP-UWU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewControllerPlaceholder storyboardName="DetailMoodboard" referencedIdentifier="DetailMoodboard" id="6Eq-5Z-aL0" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="IZX-gN-gIx"/>
                 </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="PZJ-rP-UWU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3501" y="-297"/>
         </scene>
@@ -728,6 +728,9 @@
             <point key="canvasLocation" x="2899" y="1463"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="UV8-Sg-Jpr"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="background_grain_big" width="855.5" height="1283"/>
         <image name="briefcase" catalog="system" width="128" height="102"/>
