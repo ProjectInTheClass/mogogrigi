@@ -43,22 +43,22 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="269" height="483"/>
                                             </imageView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="31" translatesAutoresizingMaskIntoConstraints="NO" id="Nn3-1T-iCE">
-                                                <rect key="frame" x="40.5" y="55" width="188" height="164"/>
+                                                <rect key="frame" x="40.5" y="55" width="188" height="188"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="다섯 글자는" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.75" translatesAutoresizingMaskIntoConstraints="NO" id="K7w-65-2i1" userLabel="keyword1">
-                                                        <rect key="frame" x="0.0" y="0.0" width="188" height="34"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="188" height="42"/>
                                                         <fontDescription key="fontDescription" name="NotoSerifCJKkr-Regular" family="Noto Serif CJK KR" pointSize="29"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="세글자" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.75" translatesAutoresizingMaskIntoConstraints="NO" id="vT3-Cx-UgJ" userLabel="keyword2">
-                                                        <rect key="frame" x="0.0" y="65" width="188" height="34"/>
+                                                        <rect key="frame" x="0.0" y="73" width="188" height="42"/>
                                                         <fontDescription key="fontDescription" name="NotoSerifCJKkr-Regular" family="Noto Serif CJK KR" pointSize="29"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="네개 글자" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.75" translatesAutoresizingMaskIntoConstraints="NO" id="aX1-kV-HUy" userLabel="keyword3">
-                                                        <rect key="frame" x="0.0" y="130" width="188" height="34"/>
+                                                        <rect key="frame" x="0.0" y="146" width="188" height="42"/>
                                                         <fontDescription key="fontDescription" name="NotoSerifCJKkr-Regular" family="Noto Serif CJK KR" pointSize="29"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -71,13 +71,13 @@
                                                 </constraints>
                                             </stackView>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="세개의 단어로 한줄의 문장을 만들어 보세요." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.34999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="JdO-pi-Ie7">
-                                                <rect key="frame" x="40.5" y="422.5" width="188" height="30.5"/>
+                                                <rect key="frame" x="40.5" y="415.5" width="188" height="37.5"/>
                                                 <fontDescription key="fontDescription" name="NotoSerifCJKkr-Regular" family="Noto Serif CJK KR" pointSize="13"/>
                                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GQB-Tw-mHy">
-                                                <rect key="frame" x="123" y="407.5" width="23" height="2"/>
+                                                <rect key="frame" x="123" y="400.5" width="23" height="2"/>
                                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="2" id="tdb-ud-yeY"/>
@@ -115,7 +115,7 @@
                                 </connections>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mogrige" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="yct-OU-Qlr">
-                                <rect key="frame" x="169.5" y="133" width="75" height="20"/>
+                                <rect key="frame" x="169.5" y="128.5" width="75" height="24.5"/>
                                 <fontDescription key="fontDescription" name="NotoSerifCJKkr-Bold" family="Noto Serif CJK KR" pointSize="17"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -581,7 +581,7 @@
                                                                 <rect key="frame" x="28" y="27.5" width="249.5" height="199.5"/>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2020. 10. 28. Tuesday" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="8vh-qh-th8">
-                                                                <rect key="frame" x="28" y="251" width="249.5" height="10.5"/>
+                                                                <rect key="frame" x="28" y="248.5" width="249.5" height="13"/>
                                                                 <fontDescription key="fontDescription" name="NotoSerifCJKkr-Medium" family="Noto Serif CJK KR" pointSize="9"/>
                                                                 <color key="textColor" red="0.41586382770000002" green="0.41586382770000002" blue="0.41586382770000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                 <nil key="highlightedColor"/>
@@ -620,22 +620,22 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Cf7-WS-hsB">
-                                                        <rect key="frame" x="20" y="25" width="207" height="116"/>
+                                                        <rect key="frame" x="20" y="25" width="207" height="135.5"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="강아지" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.89999997615814209" translatesAutoresizingMaskIntoConstraints="NO" id="d9w-K6-UrR">
-                                                                <rect key="frame" x="0.0" y="0.0" width="207" height="28"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="207" height="34.5"/>
                                                                 <fontDescription key="fontDescription" name="NotoSerifCJKkr-Medium" family="Noto Serif CJK KR" pointSize="24"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오래된 서재" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.89999997615814209" translatesAutoresizingMaskIntoConstraints="NO" id="dnG-Tb-fGI">
-                                                                <rect key="frame" x="0.0" y="44" width="207" height="28"/>
+                                                                <rect key="frame" x="0.0" y="50.5" width="207" height="34.5"/>
                                                                 <fontDescription key="fontDescription" name="NotoSerifCJKkr-Medium" family="Noto Serif CJK KR" pointSize="24"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="말린 꽃" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.89999997615814209" translatesAutoresizingMaskIntoConstraints="NO" id="gqL-zV-8Cc">
-                                                                <rect key="frame" x="0.0" y="88" width="207" height="28"/>
+                                                                <rect key="frame" x="0.0" y="101" width="207" height="34.5"/>
                                                                 <fontDescription key="fontDescription" name="NotoSerifCJKkr-Medium" family="Noto Serif CJK KR" pointSize="24"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -643,7 +643,7 @@
                                                         </subviews>
                                                     </stackView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="made by Mogrige" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XWQ-al-1Rz">
-                                                        <rect key="frame" x="331" y="25" width="63" height="9.5"/>
+                                                        <rect key="frame" x="326" y="25" width="68" height="11.5"/>
                                                         <fontDescription key="fontDescription" name="NotoSerifCJKkr-Medium" family="Noto Serif CJK KR" pointSize="8"/>
                                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
@@ -779,13 +779,13 @@
                                                         <rect key="frame" x="20" y="25" width="236" height="326"/>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.60000002384185791" translatesAutoresizingMaskIntoConstraints="NO" id="a5d-lN-Jh1">
-                                                        <rect key="frame" x="35" y="40" width="124" height="15.5"/>
+                                                        <rect key="frame" x="35" y="40" width="124" height="19"/>
                                                         <fontDescription key="fontDescription" name="NotoSerifCJKkr-Bold" family="Noto Serif CJK KR" pointSize="13"/>
                                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="전체적으로 브라운과 오렌지의 노을 빛으로 배색하고 포인트 컬러를 체크무늬에 표현한다. 늘어진 자세의 고양이는 검은 실루엣으로 하여 그림자와 그 형태로만 간접적으로 그려 쓸쓸함과 따뜻함을 동시에 보여준다." lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.40000000596046448" translatesAutoresizingMaskIntoConstraints="NO" id="MMn-Wy-kXe">
-                                                        <rect key="frame" x="35" y="82.5" width="196" height="218.5"/>
+                                                        <rect key="frame" x="35" y="86" width="196" height="218.5"/>
                                                         <fontDescription key="fontDescription" name="NotoSerifCJKkr-Regular" family="Noto Serif CJK KR" pointSize="13"/>
                                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
@@ -794,7 +794,7 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="517.5"/>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="made by Mogrige" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="037-FI-Xp7">
-                                                        <rect key="frame" x="331" y="25" width="63" height="9.5"/>
+                                                        <rect key="frame" x="326" y="25" width="68" height="11.5"/>
                                                         <fontDescription key="fontDescription" name="NotoSerifCJKkr-Medium" family="Noto Serif CJK KR" pointSize="8"/>
                                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
@@ -844,7 +844,7 @@
                                                 <rect key="frame" x="0.0" y="1035" width="414" height="138"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artworks" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cHw-2x-R7H">
-                                                        <rect key="frame" x="20" y="105.5" width="60" height="17.5"/>
+                                                        <rect key="frame" x="20" y="101" width="71" height="22"/>
                                                         <fontDescription key="fontDescription" name="NotoSerifCJKkr-Bold" family="Noto Serif CJK KR" pointSize="15"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -860,13 +860,17 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DnQ-7S-XOc">
                                                 <rect key="frame" x="0.0" y="1173" width="414" height="517.5"/>
                                                 <subviews>
-                                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" bounces="NO" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wtc-WW-mn1">
-                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="518"/>
+                                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wtc-WW-mn1">
+                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="517.5"/>
                                                         <subviews>
                                                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="NwZ-ys-OCw">
                                                                 <rect key="frame" x="96.5" y="470" width="221" height="27.5"/>
                                                             </pageControl>
                                                         </subviews>
+                                                        <constraints>
+                                                            <constraint firstAttribute="trailing" secondItem="NwZ-ys-OCw" secondAttribute="trailing" constant="96.5" id="20o-fh-vSN"/>
+                                                            <constraint firstAttribute="bottom" secondItem="NwZ-ys-OCw" secondAttribute="bottom" constant="20.5" id="4et-QO-bVX"/>
+                                                        </constraints>
                                                         <viewLayoutGuide key="contentLayoutGuide" id="ePz-kb-ecA"/>
                                                         <viewLayoutGuide key="frameLayoutGuide" id="2tH-xd-2iT"/>
                                                     </scrollView>
@@ -874,12 +878,12 @@
                                                 <color key="backgroundColor" systemColor="systemGray4Color"/>
                                                 <constraints>
                                                     <constraint firstAttribute="bottom" secondItem="NwZ-ys-OCw" secondAttribute="bottom" constant="20" id="FMO-Ki-xca"/>
-                                                    <constraint firstItem="wtc-WW-mn1" firstAttribute="top" secondItem="DnQ-7S-XOc" secondAttribute="top" id="Q4S-Tf-1ce"/>
-                                                    <constraint firstAttribute="trailing" secondItem="wtc-WW-mn1" secondAttribute="trailing" id="XFk-39-zsk"/>
+                                                    <constraint firstItem="wtc-WW-mn1" firstAttribute="top" secondItem="DnQ-7S-XOc" secondAttribute="top" id="XVf-Vu-ExI"/>
                                                     <constraint firstAttribute="width" secondItem="DnQ-7S-XOc" secondAttribute="height" multiplier="4:5" id="cBt-Wf-HvB"/>
+                                                    <constraint firstItem="wtc-WW-mn1" firstAttribute="centerY" secondItem="DnQ-7S-XOc" secondAttribute="centerY" id="chq-Pa-rjO"/>
                                                     <constraint firstItem="NwZ-ys-OCw" firstAttribute="width" secondItem="DnQ-7S-XOc" secondAttribute="width" multiplier="0.533333" id="gHf-T6-Cmm"/>
-                                                    <constraint firstItem="wtc-WW-mn1" firstAttribute="leading" secondItem="DnQ-7S-XOc" secondAttribute="leading" id="k0M-SJ-m9f"/>
-                                                    <constraint firstAttribute="bottom" secondItem="wtc-WW-mn1" secondAttribute="bottom" id="lVA-d7-vUx"/>
+                                                    <constraint firstItem="wtc-WW-mn1" firstAttribute="leading" secondItem="DnQ-7S-XOc" secondAttribute="leading" id="pJd-u4-AoL"/>
+                                                    <constraint firstItem="wtc-WW-mn1" firstAttribute="centerX" secondItem="DnQ-7S-XOc" secondAttribute="centerX" id="vbF-sd-HKn"/>
                                                     <constraint firstItem="NwZ-ys-OCw" firstAttribute="centerX" secondItem="DnQ-7S-XOc" secondAttribute="centerX" id="zgv-Ox-DST"/>
                                                 </constraints>
                                             </view>
@@ -910,7 +914,8 @@
                                         <barButtonItem key="leftBarButtonItem" title="Item" image="chevron.left" catalog="system" id="lOS-uf-di9">
                                             <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <connections>
-                                                <action selector="closeButton:" destination="rFP-sV-WcK" id="Bly-gf-6eu"/>
+                                                <action selector="closeButton:" destination="rFP-sV-WcK" id="AVk-Lx-rru"/>
+                                                <segue destination="hwy-ZT-HjV" kind="unwind" unwindAction="closeModal:" id="Q9N-75-ZbA"/>
                                             </connections>
                                         </barButtonItem>
                                         <rightBarButtonItems>
@@ -948,11 +953,15 @@
                     <connections>
                         <outlet property="first" destination="d9w-K6-UrR" id="HaV-BI-d3U"/>
                         <outlet property="frame1" destination="Sud-hH-u6H" id="dFr-eX-SxL"/>
-                        <outlet property="frame1Img" destination="4Lv-y9-F7S" id="8OR-RM-iYp"/>
                         <outlet property="frame2" destination="Lax-MO-xAp" id="BPY-sP-P5Q"/>
                         <outlet property="frame3" destination="b2h-Pw-tql" id="Wnd-Mc-t8r"/>
                         <outlet property="frame4" destination="XtK-3o-CIZ" id="ax9-cq-Bh0"/>
                         <outlet property="frame5" destination="Tmb-b2-I66" id="key-pZ-aTx"/>
+                        <outlet property="moodboardImg1" destination="4Lv-y9-F7S" id="eMk-8n-5cp"/>
+                        <outlet property="moodboardImg2" destination="Vva-bV-Kzi" id="7gm-FJ-QUw"/>
+                        <outlet property="moodboardImg3" destination="9b1-h2-ZDg" id="Pwt-Uw-utD"/>
+                        <outlet property="moodboardImg4" destination="Mec-W1-Rmm" id="gEF-En-OBs"/>
+                        <outlet property="moodboardImg5" destination="iCY-0O-tht" id="3LQ-3U-OFf"/>
                         <outlet property="pageControl" destination="NwZ-ys-OCw" id="RHo-oS-VEY"/>
                         <outlet property="scrollView" destination="wtc-WW-mn1" id="qYJ-rS-6eg"/>
                         <outlet property="second" destination="dnG-Tb-fGI" id="k1o-Nh-Nre"/>
@@ -963,6 +972,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YYg-X3-x7K" sceneMemberID="firstResponder"/>
+                <exit id="hwy-ZT-HjV" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3802.898550724638" y="-185.49107142857142"/>
         </scene>
