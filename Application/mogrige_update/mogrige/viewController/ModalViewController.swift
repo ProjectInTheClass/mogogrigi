@@ -14,6 +14,7 @@ class ModalViewController: UIViewController, UIImagePickerControllerDelegate, UI
     let imagePicker: UIImagePickerController! = UIImagePickerController()
     
     var selectedTitle: [String?] = []
+    var selectedImg: [UIImage?] = [] 
     
     @IBOutlet weak var mainTitle: UILabel!
     @IBOutlet weak var textTitle: UITextView!
@@ -62,6 +63,7 @@ class ModalViewController: UIViewController, UIImagePickerControllerDelegate, UI
             vc.thirdKeyWord = selectedTitle[2]
             vc.textTitle = textTitle.text
             vc.textDescription =  textDescription.text
+            vc.artworks = selectedImg
             
             present(vc, animated: true, completion: nil)
         }
@@ -73,9 +75,9 @@ class ModalViewController: UIViewController, UIImagePickerControllerDelegate, UI
         config.library.maxNumberOfItems = 5
         
         let picker = YPImagePicker(configuration: config)
-        picker.didFinishPicking { [unowned picker] items, cancelled in
+        picker.didFinishPicking { [self, unowned picker] items, cancelled in
             
-            var selectedImg: [UIImage] = [] //이미지 넣을 빈배열 > 이게 코어데이터에 있어야하지 않을까
+            //이미지 넣을 빈배열 > 이게 코어데이터에 있어야하지 않을까
             
             if cancelled {
                 picker.dismiss(animated: true, completion: nil)
