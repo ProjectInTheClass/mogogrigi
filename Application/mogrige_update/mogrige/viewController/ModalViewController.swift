@@ -7,12 +7,14 @@
 
 import UIKit
 import MobileCoreServices
+import YPImagePicker
 
 class ModalViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
         
     let imagePicker: UIImagePickerController! = UIImagePickerController()
     
     var selectedTitle: [String?] = []
+    var selectedImg: [UIImage?] = [] 
     
     @IBOutlet weak var mainTitle: UILabel!
     @IBOutlet weak var textTitle: UITextView!
@@ -61,6 +63,7 @@ class ModalViewController: UIViewController, UIImagePickerControllerDelegate, UI
             vc.thirdKeyWord = selectedTitle[2]
             vc.textTitle = textTitle.text
             vc.textDescription =  textDescription.text
+            vc.artworks = selectedImg
             
             present(vc, animated: true, completion: nil)
         }
@@ -68,32 +71,40 @@ class ModalViewController: UIViewController, UIImagePickerControllerDelegate, UI
     
     // 이미지 추가 버튼 클릭시 액션시트 구현 및 카메라, 포토라이브러리 설정
     @IBAction func buttonDidTap(_ sender: UIButton) {
-        let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        var config = YPImagePickerConfiguration()
+        config.library.maxNumberOfItems = 5
         
-        let imoportFromAlbum = UIAlertAction(title: "앨범에서 가져오기", style: .default) { _ in
-            let picker = UIImagePickerController()
-            picker.delegate = self
-            picker.sourceType = .photoLibrary
-            picker.mediaTypes = [kUTTypeImage as String]
-            picker.allowsEditing = false
-            self.present(picker, animated: true, completion: nil)
-        }
-        let takePhoto = UIAlertAction(title: "카메라로 찍기", style: .default) { _ in
-            let picker = UIImagePickerController()
-            picker.delegate = self
-            picker.sourceType = .camera
-            picker.cameraCaptureMode = .photo
-            picker.mediaTypes = [kUTTypeImage as String]
-            picker.allowsEditing = false
-            self.present(picker, animated: true, completion: nil)
-        }
-        let cancel = UIAlertAction(title: "취소", style: .cancel)
-        
-        actionSheet.addAction(imoportFromAlbum)
-        actionSheet.addAction(takePhoto)
-        actionSheet.addAction(cancel)
-        
-        self.present(actionSheet, animated: true, completion: nil)
+        let picker = YPImagePicker(configuration: config)
+        picker.didFinishPicking { [self, unowned picker] items, cancelled in
+            
+            //이미지 넣을 빈배열 > 이게 코어데이터에 있어야하지 않을까
+            
+            if cancelled {
+                picker.dismiss(animated: true, completion: nil)
+                return
+            }
+            
+            for item in items {
+                switch item {
+                case .photo(let photo):
+                    //이미지를 배열에 넣어주는 code
+                    selectedImg.append(photo.image)
+                    print(photo)
+                    
+                default:
+                    print("")
+                }
+            }
+            
+            picker.dismiss(animated: true) {
+                //닫을 때 무드보드에 전달
+                //아래 코드 실험했지만 실패, 이 부분에서 크러시남
+//                let shareVC = self.storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
+//                for index in 0..<selectedImg.count {
+//                    shareVC.sharedImg.append(selectedImg[index])
+                }
+            }
+        present(picker, animated: true, completion: nil)
 
         }
     

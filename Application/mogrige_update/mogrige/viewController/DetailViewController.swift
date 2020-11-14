@@ -10,14 +10,18 @@ import UIKit
 
 class DetailViewController: UIViewController, UIScrollViewDelegate {
     
-
     @IBOutlet weak var frame1: UIView!
-    @IBOutlet weak var frame1Img: UIImageView!
     @IBOutlet weak var frame2: UIView!
     @IBOutlet weak var frame3: UIView!
     @IBOutlet weak var frame4: UIView!
     @IBOutlet weak var frame5: UIView!
     @IBOutlet weak var section1: UIView!
+    
+    @IBOutlet weak var moodboardImg1: UIImageView!
+    @IBOutlet weak var moodboardImg2: UIImageView!
+    @IBOutlet weak var moodboardImg3: UIImageView!
+    @IBOutlet weak var moodboardImg4: UIImageView!
+    @IBOutlet weak var moodboardImg5: UIImageView!
     
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var scrollView: UIScrollView!
@@ -34,26 +38,13 @@ class DetailViewController: UIViewController, UIScrollViewDelegate {
     var thirdKeyWord: String?
     var textTitle: String?
     var textDescription: String?
+    var artworks: [UIImage?] = []
+    let dummyImg = ["dummy_img1", "dummy_img2", "dummy_img3", "dummy_img4", "dummy_img5"]
     
     
     @IBAction func closeButton(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
-    
-    
-    
-    
-    
-    //아트웍 이미지 어레이
-    var artworks = [
-        "IMG_9572",
-        "dummy_img2",
-        "dummy_img3",
-        "dummy_img4",
-        "dummy_img5"
-    ]
-    
-
     
     
     var frame = CGRect.zero
@@ -91,6 +82,13 @@ class DetailViewController: UIViewController, UIScrollViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // ModalViewController에서 전달하는 이미지 받기
+        moodboardImg1.image = artworks[0]
+        moodboardImg2.image = artworks[1]
+        moodboardImg3.image = artworks[2]
+        moodboardImg4.image = artworks[3]
+        moodboardImg5.image = artworks[4]
         
         view.backgroundColor = UIColor(red: 240/255, green: 239/255, blue: 238/255, alpha: 1)
 
@@ -164,7 +162,7 @@ class DetailViewController: UIViewController, UIScrollViewDelegate {
             
             let imgView = UIImageView(frame: frame)
             imgView.contentMode = .scaleAspectFill
-            imgView.image = UIImage(named: artworks[index])
+            imgView.image = artworks[index]
             imgView.clipsToBounds = true
             
             self.scrollView.addSubview(imgView)
