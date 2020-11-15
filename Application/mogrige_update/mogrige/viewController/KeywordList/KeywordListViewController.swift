@@ -15,6 +15,8 @@ class KeywordListViewController: UIViewController, UITableViewDelegate, UITableV
     let cellIdentifier: String = "cell"
     let customCellIdentifier: String = "customCell"
     
+    
+    @IBOutlet var keywordListView: UIView!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var keywordListTableView: UITableView!
     @IBOutlet weak var boardTotalNum: UILabel!
@@ -24,6 +26,9 @@ class KeywordListViewController: UIViewController, UITableViewDelegate, UITableV
         }
     
     //
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.backgroundColor = .clear
+    }
     
     //Cell 높이 조절
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -53,12 +58,14 @@ class KeywordListViewController: UIViewController, UITableViewDelegate, UITableV
         
         //키워드로 타이틀 설정
         cell.keywordTitle?.text = postListCell
+        cell.configure()
 
         return cell
     }
     
     //tableView 스와이프해서 삭제하기
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
         if editingStyle == UITableViewCell.EditingStyle.delete {
             Post_List.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
@@ -68,10 +75,18 @@ class KeywordListViewController: UIViewController, UITableViewDelegate, UITableV
         
     }
     
+    
+    
     //기본 세팅
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //UIview뷰 배경화면 적용
+        let backgroundImg = UIImage(named: "background_grain_big")
+        view.backgroundColor = UIColor(patternImage: backgroundImg!)
+        //테이블뷰 배경화면색 투명으로 적용
+        keywordListTableView.backgroundColor = UIColor.clear
+        //검색바 적용
         searchBar.delegate = self
         
         for item in Post_List {
@@ -84,6 +99,7 @@ class KeywordListViewController: UIViewController, UITableViewDelegate, UITableV
     
     override func viewWillAppear(_ animated: Bool) {
         boardTotalNum.text = "총 \(Post_List.count)개의 보드"
+        //keywordListTableView.tableFooterView = UIView(frame: CGRect.zero)
     }
     
     //검색바 config
@@ -103,6 +119,20 @@ class KeywordListViewController: UIViewController, UITableViewDelegate, UITableV
         }
         self.keywordListTableView.reloadData()
         
+        let searchBar = UISearchBar()
+                searchBar.placeholder = "Search"
+        self.navigationController?.navigationBar.topItem?.titleView = searchBar
+        
+        //적용안되고 있음! 수정필요
+//        if let textfield = searchBar.value(forKey: "searchField") as? UITextField {
+//            //서치바 백그라운드 컬러
+//            textfield.backgroundColor = UIColor.black
+//            //플레이스홀더 글씨 색 정하기
+//            textfield.attributedPlaceholder = NSAttributedString(string: textfield.placeholder ?? "", attributes: [NSAttributedString.Key.foregroundColor : UIColor.lightGray])
+//            //서치바 텍스트입력시 색 정하기
+//            textfield.textColor = UIColor.white
+//        }
+
     }
     
     /*
