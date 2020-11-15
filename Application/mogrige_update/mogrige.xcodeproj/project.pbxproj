@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -17,23 +17,20 @@
 		070B1FE8251CA17C007342B8 /* model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070B1FE7251CA17C007342B8 /* model.swift */; };
 		072FAB69253F1D2B0053983F /* ColorPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072FAB68253F1D2B0053983F /* ColorPickerViewController.swift */; };
 		07461576254EF80C00202F5C /* mogrige.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 07461574254EF80C00202F5C /* mogrige.xcdatamodeld */; };
-		07461623254FECA100202F5C /* MoodboardList+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07461621254FECA100202F5C /* MoodboardList+CoreDataClass.swift */; };
-		07461624254FECA100202F5C /* MoodboardList+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07461622254FECA100202F5C /* MoodboardList+CoreDataProperties.swift */; };
-		078955A2252C25B600DB66E3 /* KeyListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078955A1252C25B600DB66E3 /* KeyListTableViewController.swift */; };
-		078955A7252C260600DB66E3 /* KeyListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078955A6252C260600DB66E3 /* KeyListTableViewCell.swift */; };
 		078955AC252C263A00DB66E3 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078955AB252C263A00DB66E3 /* DetailViewController.swift */; };
 		078955B1252C980200DB66E3 /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078955B0252C980100DB66E3 /* ModalViewController.swift */; };
+		07D576242560EEBC00D6CF08 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D576232560EEBC00D6CF08 /* DataManager.swift */; };
 		2C4AD126254539F4008CCC3C /* KeywordListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4AD125254539F4008CCC3C /* KeywordListViewController.swift */; };
 		2C4AD12B25453A12008CCC3C /* KeywordList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C4AD12A25453A12008CCC3C /* KeywordList.storyboard */; };
 		2CF8270D2545BA9600EAB26B /* KeywordListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF8270C2545BA9600EAB26B /* KeywordListTableViewCell.swift */; };
-		43AFB0A5943E92673168EA96 /* Pods_mogrige.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9ABA68AA44CCCCA9CF37F91A /* Pods_mogrige.framework */; };
-		A2EB0D581DE33E9438A6B008 /* Pods_mogrige_mogrigeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E005D7466B698838145F200 /* Pods_mogrige_mogrigeUITests.framework */; };
+		74B67B52B92CAF41BA701989 /* Pods_mogrige_mogrigeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB44BE43076394DA09F240CF /* Pods_mogrige_mogrigeUITests.framework */; };
 		AA400B3B2549A03900B9EF66 /* DetailMoodboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA400B3A2549A03900B9EF66 /* DetailMoodboard.storyboard */; };
 		AAA4F0112549A82B001B8B2E /* NotoSerifCJKkr-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = AAA4F00D2549A828001B8B2E /* NotoSerifCJKkr-Medium.otf */; };
 		AAA4F0122549A82B001B8B2E /* NotoSerifCJKkr-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = AAA4F00E2549A829001B8B2E /* NotoSerifCJKkr-Bold.otf */; };
 		AAA4F0132549A82B001B8B2E /* NotoSerifCJKkr-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = AAA4F00F2549A82A001B8B2E /* NotoSerifCJKkr-SemiBold.otf */; };
 		AAA4F0142549A82B001B8B2E /* NotoSerifCJKkr-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = AAA4F0102549A82B001B8B2E /* NotoSerifCJKkr-Regular.otf */; };
-		DD5B01D66316330142ED3D10 /* Pods_mogrigeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4676F7A7239BAEF0644D1097 /* Pods_mogrigeTests.framework */; };
+		CD5F77C3B7B9364B156A5F08 /* Pods_mogrige.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C37F233E924588BF8EDB3EBD /* Pods_mogrige.framework */; };
+		E48C5C9C8BE43C1CF60BDA3C /* Pods_mogrigeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85DD3D1D256CF7F43EAE71F9 /* Pods_mogrigeTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,29 +67,26 @@
 		070B1FE7251CA17C007342B8 /* model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = model.swift; sourceTree = "<group>"; };
 		072FAB68253F1D2B0053983F /* ColorPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerViewController.swift; sourceTree = "<group>"; };
 		07461575254EF80C00202F5C /* mogrige.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = mogrige.xcdatamodel; sourceTree = "<group>"; };
-		07461621254FECA100202F5C /* MoodboardList+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MoodboardList+CoreDataClass.swift"; sourceTree = "<group>"; };
-		07461622254FECA100202F5C /* MoodboardList+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MoodboardList+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		078955A1252C25B600DB66E3 /* KeyListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyListTableViewController.swift; sourceTree = "<group>"; };
-		078955A6252C260600DB66E3 /* KeyListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyListTableViewCell.swift; sourceTree = "<group>"; };
 		078955AB252C263A00DB66E3 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		078955B0252C980100DB66E3 /* ModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
-		0B5D708971F0766A95EDAD22 /* Pods-mogrigeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mogrigeTests.debug.xcconfig"; path = "Target Support Files/Pods-mogrigeTests/Pods-mogrigeTests.debug.xcconfig"; sourceTree = "<group>"; };
-		2AB0C58FF8A8F555B0033F4B /* Pods-mogrige.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mogrige.release.xcconfig"; path = "Target Support Files/Pods-mogrige/Pods-mogrige.release.xcconfig"; sourceTree = "<group>"; };
+		07D576232560EEBC00D6CF08 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		2C4AD125254539F4008CCC3C /* KeywordListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeywordListViewController.swift; sourceTree = "<group>"; };
 		2C4AD12A25453A12008CCC3C /* KeywordList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = KeywordList.storyboard; sourceTree = "<group>"; };
 		2CF8270C2545BA9600EAB26B /* KeywordListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeywordListTableViewCell.swift; sourceTree = "<group>"; };
-		2E005D7466B698838145F200 /* Pods_mogrige_mogrigeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mogrige_mogrigeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4676F7A7239BAEF0644D1097 /* Pods_mogrigeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mogrigeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6C30743BA455F45C1CBE6B74 /* Pods-mogrigeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mogrigeTests.release.xcconfig"; path = "Target Support Files/Pods-mogrigeTests/Pods-mogrigeTests.release.xcconfig"; sourceTree = "<group>"; };
-		9ABA68AA44CCCCA9CF37F91A /* Pods_mogrige.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mogrige.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A6ED072214B34B21AB14A79C /* Pods-mogrige-mogrigeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mogrige-mogrigeUITests.debug.xcconfig"; path = "Target Support Files/Pods-mogrige-mogrigeUITests/Pods-mogrige-mogrigeUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		5A7B4B99A3E9AEDD2847CD26 /* Pods-mogrige-mogrigeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mogrige-mogrigeUITests.release.xcconfig"; path = "Target Support Files/Pods-mogrige-mogrigeUITests/Pods-mogrige-mogrigeUITests.release.xcconfig"; sourceTree = "<group>"; };
+		5D79090B4D5E60ECA94A44EA /* Pods-mogrige-mogrigeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mogrige-mogrigeUITests.debug.xcconfig"; path = "Target Support Files/Pods-mogrige-mogrigeUITests/Pods-mogrige-mogrigeUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		6FFDA31C28F2C1EC294CCF55 /* Pods-mogrigeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mogrigeTests.debug.xcconfig"; path = "Target Support Files/Pods-mogrigeTests/Pods-mogrigeTests.debug.xcconfig"; sourceTree = "<group>"; };
+		84BDCA73E78E3086AA0ABEF9 /* Pods-mogrige.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mogrige.debug.xcconfig"; path = "Target Support Files/Pods-mogrige/Pods-mogrige.debug.xcconfig"; sourceTree = "<group>"; };
+		85DD3D1D256CF7F43EAE71F9 /* Pods_mogrigeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mogrigeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A3DE5F0D747B01BEEA31F067 /* Pods-mogrigeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mogrigeTests.release.xcconfig"; path = "Target Support Files/Pods-mogrigeTests/Pods-mogrigeTests.release.xcconfig"; sourceTree = "<group>"; };
 		AA400B3A2549A03900B9EF66 /* DetailMoodboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailMoodboard.storyboard; sourceTree = "<group>"; };
 		AAA4F00D2549A828001B8B2E /* NotoSerifCJKkr-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSerifCJKkr-Medium.otf"; sourceTree = "<group>"; };
 		AAA4F00E2549A829001B8B2E /* NotoSerifCJKkr-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSerifCJKkr-Bold.otf"; sourceTree = "<group>"; };
 		AAA4F00F2549A82A001B8B2E /* NotoSerifCJKkr-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSerifCJKkr-SemiBold.otf"; sourceTree = "<group>"; };
 		AAA4F0102549A82B001B8B2E /* NotoSerifCJKkr-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSerifCJKkr-Regular.otf"; sourceTree = "<group>"; };
-		F462AA330E13B73F17085FD4 /* Pods-mogrige-mogrigeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mogrige-mogrigeUITests.release.xcconfig"; path = "Target Support Files/Pods-mogrige-mogrigeUITests/Pods-mogrige-mogrigeUITests.release.xcconfig"; sourceTree = "<group>"; };
-		F83A60134B02CCBAF5429F62 /* Pods-mogrige.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mogrige.debug.xcconfig"; path = "Target Support Files/Pods-mogrige/Pods-mogrige.debug.xcconfig"; sourceTree = "<group>"; };
+		C1653E3062B31458262614F3 /* Pods-mogrige.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mogrige.release.xcconfig"; path = "Target Support Files/Pods-mogrige/Pods-mogrige.release.xcconfig"; sourceTree = "<group>"; };
+		C37F233E924588BF8EDB3EBD /* Pods_mogrige.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mogrige.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB44BE43076394DA09F240CF /* Pods_mogrige_mogrigeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mogrige_mogrigeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,7 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				43AFB0A5943E92673168EA96 /* Pods_mogrige.framework in Frameworks */,
+				CD5F77C3B7B9364B156A5F08 /* Pods_mogrige.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,7 +102,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DD5B01D66316330142ED3D10 /* Pods_mogrigeTests.framework in Frameworks */,
+				E48C5C9C8BE43C1CF60BDA3C /* Pods_mogrigeTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,7 +110,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A2EB0D581DE33E9438A6B008 /* Pods_mogrige_mogrigeUITests.framework in Frameworks */,
+				74B67B52B92CAF41BA701989 /* Pods_mogrige_mogrigeUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -133,7 +127,7 @@
 				070B1FB2251B5FEB007342B8 /* mogrigeUITests */,
 				070B1F8F251B5FE9007342B8 /* Products */,
 				CC0B6639AE1A68E013B61B26 /* Pods */,
-				65F912A5888B56BF4810574C /* Frameworks */,
+				E60678D82ECDD7E0B782AF93 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -152,12 +146,8 @@
 			children = (
 				070B1FE6251CA16B007342B8 /* model */,
 				072FAB53253DBDB80053983F /* viewController */,
-				2C4AD12A25453A12008CCC3C /* KeywordList.storyboard */,
-				AA400B3A2549A03900B9EF66 /* DetailMoodboard.storyboard */,
-				070B1F97251B5FE9007342B8 /* Main.storyboard */,
 				070B1F9A251B5FEB007342B8 /* Assets.xcassets */,
 				070B1F9F251B5FEB007342B8 /* Info.plist */,
-				07461574254EF80C00202F5C /* mogrige.xcdatamodeld */,
 			);
 			path = mogrige;
 			sourceTree = "<group>";
@@ -184,8 +174,8 @@
 			isa = PBXGroup;
 			children = (
 				070B1FE7251CA17C007342B8 /* model.swift */,
-				07461621254FECA100202F5C /* MoodboardList+CoreDataClass.swift */,
-				07461622254FECA100202F5C /* MoodboardList+CoreDataProperties.swift */,
+				07D576232560EEBC00D6CF08 /* DataManager.swift */,
+				07461574254EF80C00202F5C /* mogrige.xcdatamodeld */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -193,11 +183,11 @@
 		072FAB53253DBDB80053983F /* viewController */ = {
 			isa = PBXGroup;
 			children = (
+				07D5767025611E1F00D6CF08 /* RamdomPicked */,
+				07D5763B2560F4DF00D6CF08 /* Editor */,
+				07D5763C2560F4EC00D6CF08 /* Moodboard */,
 				2C4AD13225453B69008CCC3C /* KeywordList */,
-				070B1F95251B5FE9007342B8 /* ViewController.swift */,
-				078955B0252C980100DB66E3 /* ModalViewController.swift */,
-				078955AB252C263A00DB66E3 /* DetailViewController.swift */,
-				072FAB68253F1D2B0053983F /* ColorPickerViewController.swift */,
+				07D5763A2560F4BE00D6CF08 /* StoryBoard */,
 			);
 			path = viewController;
 			sourceTree = "<group>";
@@ -211,25 +201,48 @@
 			path = delegate;
 			sourceTree = "<group>";
 		};
+		07D5763A2560F4BE00D6CF08 /* StoryBoard */ = {
+			isa = PBXGroup;
+			children = (
+				2C4AD12A25453A12008CCC3C /* KeywordList.storyboard */,
+				AA400B3A2549A03900B9EF66 /* DetailMoodboard.storyboard */,
+				070B1F97251B5FE9007342B8 /* Main.storyboard */,
+			);
+			path = StoryBoard;
+			sourceTree = "<group>";
+		};
+		07D5763B2560F4DF00D6CF08 /* Editor */ = {
+			isa = PBXGroup;
+			children = (
+				078955B0252C980100DB66E3 /* ModalViewController.swift */,
+				072FAB68253F1D2B0053983F /* ColorPickerViewController.swift */,
+			);
+			path = Editor;
+			sourceTree = "<group>";
+		};
+		07D5763C2560F4EC00D6CF08 /* Moodboard */ = {
+			isa = PBXGroup;
+			children = (
+				078955AB252C263A00DB66E3 /* DetailViewController.swift */,
+			);
+			path = Moodboard;
+			sourceTree = "<group>";
+		};
+		07D5767025611E1F00D6CF08 /* RamdomPicked */ = {
+			isa = PBXGroup;
+			children = (
+				070B1F95251B5FE9007342B8 /* ViewController.swift */,
+			);
+			path = RamdomPicked;
+			sourceTree = "<group>";
+		};
 		2C4AD13225453B69008CCC3C /* KeywordList */ = {
 			isa = PBXGroup;
 			children = (
-				078955A6252C260600DB66E3 /* KeyListTableViewCell.swift */,
-				078955A1252C25B600DB66E3 /* KeyListTableViewController.swift */,
 				2C4AD125254539F4008CCC3C /* KeywordListViewController.swift */,
 				2CF8270C2545BA9600EAB26B /* KeywordListTableViewCell.swift */,
 			);
 			path = KeywordList;
-			sourceTree = "<group>";
-		};
-		65F912A5888B56BF4810574C /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				9ABA68AA44CCCCA9CF37F91A /* Pods_mogrige.framework */,
-				2E005D7466B698838145F200 /* Pods_mogrige_mogrigeUITests.framework */,
-				4676F7A7239BAEF0644D1097 /* Pods_mogrigeTests.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		AAA4F0182549A84A001B8B2E /* font */ = {
@@ -246,15 +259,24 @@
 		CC0B6639AE1A68E013B61B26 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				F83A60134B02CCBAF5429F62 /* Pods-mogrige.debug.xcconfig */,
-				2AB0C58FF8A8F555B0033F4B /* Pods-mogrige.release.xcconfig */,
-				A6ED072214B34B21AB14A79C /* Pods-mogrige-mogrigeUITests.debug.xcconfig */,
-				F462AA330E13B73F17085FD4 /* Pods-mogrige-mogrigeUITests.release.xcconfig */,
-				0B5D708971F0766A95EDAD22 /* Pods-mogrigeTests.debug.xcconfig */,
-				6C30743BA455F45C1CBE6B74 /* Pods-mogrigeTests.release.xcconfig */,
+				84BDCA73E78E3086AA0ABEF9 /* Pods-mogrige.debug.xcconfig */,
+				C1653E3062B31458262614F3 /* Pods-mogrige.release.xcconfig */,
+				5D79090B4D5E60ECA94A44EA /* Pods-mogrige-mogrigeUITests.debug.xcconfig */,
+				5A7B4B99A3E9AEDD2847CD26 /* Pods-mogrige-mogrigeUITests.release.xcconfig */,
+				6FFDA31C28F2C1EC294CCF55 /* Pods-mogrigeTests.debug.xcconfig */,
+				A3DE5F0D747B01BEEA31F067 /* Pods-mogrigeTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		E60678D82ECDD7E0B782AF93 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C37F233E924588BF8EDB3EBD /* Pods_mogrige.framework */,
+				CB44BE43076394DA09F240CF /* Pods_mogrige_mogrigeUITests.framework */,
+				85DD3D1D256CF7F43EAE71F9 /* Pods_mogrigeTests.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,11 +286,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 070B1FB8251B5FEB007342B8 /* Build configuration list for PBXNativeTarget "mogrige" */;
 			buildPhases = (
-				6FE7F1CAB6515EF15A0D47F4 /* [CP] Check Pods Manifest.lock */,
+				BDF496A435D951025E3D20FC /* [CP] Check Pods Manifest.lock */,
 				070B1F8A251B5FE9007342B8 /* Sources */,
 				070B1F8B251B5FE9007342B8 /* Frameworks */,
 				070B1F8C251B5FE9007342B8 /* Resources */,
-				B80E4482CA875705523AD9AF /* [CP] Embed Pods Frameworks */,
+				F8B027AB2C418351364A17A3 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -283,7 +305,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 070B1FBB251B5FEB007342B8 /* Build configuration list for PBXNativeTarget "mogrigeTests" */;
 			buildPhases = (
-				7F82029960C89B0D6D945D56 /* [CP] Check Pods Manifest.lock */,
+				E1A8821CDD48C74B2087F9A9 /* [CP] Check Pods Manifest.lock */,
 				070B1FA0251B5FEB007342B8 /* Sources */,
 				070B1FA1251B5FEB007342B8 /* Frameworks */,
 				070B1FA2251B5FEB007342B8 /* Resources */,
@@ -302,11 +324,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 070B1FBE251B5FEB007342B8 /* Build configuration list for PBXNativeTarget "mogrigeUITests" */;
 			buildPhases = (
-				7946E24E512A45B6044948A3 /* [CP] Check Pods Manifest.lock */,
+				26432FF331A1371D3CC3BAE5 /* [CP] Check Pods Manifest.lock */,
 				070B1FAB251B5FEB007342B8 /* Sources */,
 				070B1FAC251B5FEB007342B8 /* Frameworks */,
 				070B1FAD251B5FEB007342B8 /* Resources */,
-				F7BA79350ACB39838B7675A7 /* [CP] Embed Pods Frameworks */,
+				F1E8E975A993E701870D5464 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -393,29 +415,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		6FE7F1CAB6515EF15A0D47F4 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-mogrige-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		7946E24E512A45B6044948A3 /* [CP] Check Pods Manifest.lock */ = {
+		26432FF331A1371D3CC3BAE5 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -437,7 +437,29 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		7F82029960C89B0D6D945D56 /* [CP] Check Pods Manifest.lock */ = {
+		BDF496A435D951025E3D20FC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-mogrige-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E1A8821CDD48C74B2087F9A9 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -459,24 +481,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B80E4482CA875705523AD9AF /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-mogrige/Pods-mogrige-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-mogrige/Pods-mogrige-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-mogrige/Pods-mogrige-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F7BA79350ACB39838B7675A7 /* [CP] Embed Pods Frameworks */ = {
+		F1E8E975A993E701870D5464 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -493,6 +498,23 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-mogrige-mogrigeUITests/Pods-mogrige-mogrigeUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		F8B027AB2C418351364A17A3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-mogrige/Pods-mogrige-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-mogrige/Pods-mogrige-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-mogrige/Pods-mogrige-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -500,17 +522,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				078955A2252C25B600DB66E3 /* KeyListTableViewController.swift in Sources */,
 				078955B1252C980200DB66E3 /* ModalViewController.swift in Sources */,
 				072FAB69253F1D2B0053983F /* ColorPickerViewController.swift in Sources */,
-				07461624254FECA100202F5C /* MoodboardList+CoreDataProperties.swift in Sources */,
-				078955A7252C260600DB66E3 /* KeyListTableViewCell.swift in Sources */,
 				070B1FE8251CA17C007342B8 /* model.swift in Sources */,
 				070B1F96251B5FE9007342B8 /* ViewController.swift in Sources */,
 				07461576254EF80C00202F5C /* mogrige.xcdatamodeld in Sources */,
-				07461623254FECA100202F5C /* MoodboardList+CoreDataClass.swift in Sources */,
 				070B1F92251B5FE9007342B8 /* AppDelegate.swift in Sources */,
 				2CF8270D2545BA9600EAB26B /* KeywordListTableViewCell.swift in Sources */,
+				07D576242560EEBC00D6CF08 /* DataManager.swift in Sources */,
 				070B1F94251B5FE9007342B8 /* SceneDelegate.swift in Sources */,
 				2C4AD126254539F4008CCC3C /* KeywordListViewController.swift in Sources */,
 				078955AC252C263A00DB66E3 /* DetailViewController.swift in Sources */,
@@ -669,6 +688,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -678,7 +698,7 @@
 		};
 		070B1FB9251B5FEB007342B8 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F83A60134B02CCBAF5429F62 /* Pods-mogrige.debug.xcconfig */;
+			baseConfigurationReference = 84BDCA73E78E3086AA0ABEF9 /* Pods-mogrige.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -698,7 +718,7 @@
 		};
 		070B1FBA251B5FEB007342B8 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2AB0C58FF8A8F555B0033F4B /* Pods-mogrige.release.xcconfig */;
+			baseConfigurationReference = C1653E3062B31458262614F3 /* Pods-mogrige.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -718,7 +738,7 @@
 		};
 		070B1FBC251B5FEB007342B8 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0B5D708971F0766A95EDAD22 /* Pods-mogrigeTests.debug.xcconfig */;
+			baseConfigurationReference = 6FFDA31C28F2C1EC294CCF55 /* Pods-mogrigeTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -741,7 +761,7 @@
 		};
 		070B1FBD251B5FEB007342B8 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6C30743BA455F45C1CBE6B74 /* Pods-mogrigeTests.release.xcconfig */;
+			baseConfigurationReference = A3DE5F0D747B01BEEA31F067 /* Pods-mogrigeTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -764,7 +784,7 @@
 		};
 		070B1FBF251B5FEB007342B8 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A6ED072214B34B21AB14A79C /* Pods-mogrige-mogrigeUITests.debug.xcconfig */;
+			baseConfigurationReference = 5D79090B4D5E60ECA94A44EA /* Pods-mogrige-mogrigeUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -785,7 +805,7 @@
 		};
 		070B1FC0251B5FEB007342B8 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F462AA330E13B73F17085FD4 /* Pods-mogrige-mogrigeUITests.release.xcconfig */;
+			baseConfigurationReference = 5A7B4B99A3E9AEDD2847CD26 /* Pods-mogrige-mogrigeUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

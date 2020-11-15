@@ -15,8 +15,6 @@ class KeywordListTableViewCell: UITableViewCell {
     @IBOutlet weak var keywordTitle: UILabel!
     @IBOutlet weak var cellView: UIView! = {
         let view = UIView()
-        //view.backgroundColor = UIColor.red
-        view.layer.cornerRadius = 10
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -47,20 +45,31 @@ class KeywordListTableViewCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
-        setupView()
+        configure()
+        //setupView()
+    }
+    
+    
+    //cell design
+    func configure() {        
+        cellView.layer.cornerRadius = 3.0
+        cellView.layer.shadowColor = UIColor.darkGray.cgColor
+        cellView.layer.shadowOffset = CGSize(width: 1.0, height: 1.0)
+        cellView.layer.shadowOpacity = 0.15
+        cellView.layer.masksToBounds = false
+
     }
 
     func setupView() {
         addSubview(cellView)
-        
+
         NSLayoutConstraint.activate([
             cellView.topAnchor.constraint(equalTo: self.topAnchor, constant: 20),
             cellView.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -10),
             cellView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 10),
             cellView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
         ])
-        
+
     }
 
 }
