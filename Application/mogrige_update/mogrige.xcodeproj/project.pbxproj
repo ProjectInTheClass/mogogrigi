@@ -17,12 +17,9 @@
 		070B1FE8251CA17C007342B8 /* model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070B1FE7251CA17C007342B8 /* model.swift */; };
 		072FAB69253F1D2B0053983F /* ColorPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072FAB68253F1D2B0053983F /* ColorPickerViewController.swift */; };
 		07461576254EF80C00202F5C /* mogrige.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 07461574254EF80C00202F5C /* mogrige.xcdatamodeld */; };
-		07461623254FECA100202F5C /* MoodboardList+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07461621254FECA100202F5C /* MoodboardList+CoreDataClass.swift */; };
-		07461624254FECA100202F5C /* MoodboardList+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07461622254FECA100202F5C /* MoodboardList+CoreDataProperties.swift */; };
-		078955A2252C25B600DB66E3 /* KeyListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078955A1252C25B600DB66E3 /* KeyListTableViewController.swift */; };
-		078955A7252C260600DB66E3 /* KeyListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078955A6252C260600DB66E3 /* KeyListTableViewCell.swift */; };
 		078955AC252C263A00DB66E3 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078955AB252C263A00DB66E3 /* DetailViewController.swift */; };
 		078955B1252C980200DB66E3 /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078955B0252C980100DB66E3 /* ModalViewController.swift */; };
+		07D576242560EEBC00D6CF08 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D576232560EEBC00D6CF08 /* DataManager.swift */; };
 		2C4AD126254539F4008CCC3C /* KeywordListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4AD125254539F4008CCC3C /* KeywordListViewController.swift */; };
 		2C4AD12B25453A12008CCC3C /* KeywordList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C4AD12A25453A12008CCC3C /* KeywordList.storyboard */; };
 		2CF8270D2545BA9600EAB26B /* KeywordListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF8270C2545BA9600EAB26B /* KeywordListTableViewCell.swift */; };
@@ -70,12 +67,9 @@
 		070B1FE7251CA17C007342B8 /* model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = model.swift; sourceTree = "<group>"; };
 		072FAB68253F1D2B0053983F /* ColorPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerViewController.swift; sourceTree = "<group>"; };
 		07461575254EF80C00202F5C /* mogrige.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = mogrige.xcdatamodel; sourceTree = "<group>"; };
-		07461621254FECA100202F5C /* MoodboardList+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MoodboardList+CoreDataClass.swift"; sourceTree = "<group>"; };
-		07461622254FECA100202F5C /* MoodboardList+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MoodboardList+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		078955A1252C25B600DB66E3 /* KeyListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyListTableViewController.swift; sourceTree = "<group>"; };
-		078955A6252C260600DB66E3 /* KeyListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyListTableViewCell.swift; sourceTree = "<group>"; };
 		078955AB252C263A00DB66E3 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		078955B0252C980100DB66E3 /* ModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
+		07D576232560EEBC00D6CF08 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		2C4AD125254539F4008CCC3C /* KeywordListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeywordListViewController.swift; sourceTree = "<group>"; };
 		2C4AD12A25453A12008CCC3C /* KeywordList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = KeywordList.storyboard; sourceTree = "<group>"; };
 		2CF8270C2545BA9600EAB26B /* KeywordListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeywordListTableViewCell.swift; sourceTree = "<group>"; };
@@ -152,12 +146,8 @@
 			children = (
 				070B1FE6251CA16B007342B8 /* model */,
 				072FAB53253DBDB80053983F /* viewController */,
-				2C4AD12A25453A12008CCC3C /* KeywordList.storyboard */,
-				AA400B3A2549A03900B9EF66 /* DetailMoodboard.storyboard */,
-				070B1F97251B5FE9007342B8 /* Main.storyboard */,
 				070B1F9A251B5FEB007342B8 /* Assets.xcassets */,
 				070B1F9F251B5FEB007342B8 /* Info.plist */,
-				07461574254EF80C00202F5C /* mogrige.xcdatamodeld */,
 			);
 			path = mogrige;
 			sourceTree = "<group>";
@@ -184,8 +174,8 @@
 			isa = PBXGroup;
 			children = (
 				070B1FE7251CA17C007342B8 /* model.swift */,
-				07461621254FECA100202F5C /* MoodboardList+CoreDataClass.swift */,
-				07461622254FECA100202F5C /* MoodboardList+CoreDataProperties.swift */,
+				07D576232560EEBC00D6CF08 /* DataManager.swift */,
+				07461574254EF80C00202F5C /* mogrige.xcdatamodeld */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -193,11 +183,11 @@
 		072FAB53253DBDB80053983F /* viewController */ = {
 			isa = PBXGroup;
 			children = (
+				07D5767025611E1F00D6CF08 /* RamdomPicked */,
+				07D5763B2560F4DF00D6CF08 /* Editor */,
+				07D5763C2560F4EC00D6CF08 /* Moodboard */,
 				2C4AD13225453B69008CCC3C /* KeywordList */,
-				070B1F95251B5FE9007342B8 /* ViewController.swift */,
-				078955B0252C980100DB66E3 /* ModalViewController.swift */,
-				078955AB252C263A00DB66E3 /* DetailViewController.swift */,
-				072FAB68253F1D2B0053983F /* ColorPickerViewController.swift */,
+				07D5763A2560F4BE00D6CF08 /* StoryBoard */,
 			);
 			path = viewController;
 			sourceTree = "<group>";
@@ -211,11 +201,44 @@
 			path = delegate;
 			sourceTree = "<group>";
 		};
+		07D5763A2560F4BE00D6CF08 /* StoryBoard */ = {
+			isa = PBXGroup;
+			children = (
+				2C4AD12A25453A12008CCC3C /* KeywordList.storyboard */,
+				AA400B3A2549A03900B9EF66 /* DetailMoodboard.storyboard */,
+				070B1F97251B5FE9007342B8 /* Main.storyboard */,
+			);
+			path = StoryBoard;
+			sourceTree = "<group>";
+		};
+		07D5763B2560F4DF00D6CF08 /* Editor */ = {
+			isa = PBXGroup;
+			children = (
+				078955B0252C980100DB66E3 /* ModalViewController.swift */,
+				072FAB68253F1D2B0053983F /* ColorPickerViewController.swift */,
+			);
+			path = Editor;
+			sourceTree = "<group>";
+		};
+		07D5763C2560F4EC00D6CF08 /* Moodboard */ = {
+			isa = PBXGroup;
+			children = (
+				078955AB252C263A00DB66E3 /* DetailViewController.swift */,
+			);
+			path = Moodboard;
+			sourceTree = "<group>";
+		};
+		07D5767025611E1F00D6CF08 /* RamdomPicked */ = {
+			isa = PBXGroup;
+			children = (
+				070B1F95251B5FE9007342B8 /* ViewController.swift */,
+			);
+			path = RamdomPicked;
+			sourceTree = "<group>";
+		};
 		2C4AD13225453B69008CCC3C /* KeywordList */ = {
 			isa = PBXGroup;
 			children = (
-				078955A6252C260600DB66E3 /* KeyListTableViewCell.swift */,
-				078955A1252C25B600DB66E3 /* KeyListTableViewController.swift */,
 				2C4AD125254539F4008CCC3C /* KeywordListViewController.swift */,
 				2CF8270C2545BA9600EAB26B /* KeywordListTableViewCell.swift */,
 			);
@@ -499,17 +522,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				078955A2252C25B600DB66E3 /* KeyListTableViewController.swift in Sources */,
 				078955B1252C980200DB66E3 /* ModalViewController.swift in Sources */,
 				072FAB69253F1D2B0053983F /* ColorPickerViewController.swift in Sources */,
-				07461624254FECA100202F5C /* MoodboardList+CoreDataProperties.swift in Sources */,
-				078955A7252C260600DB66E3 /* KeyListTableViewCell.swift in Sources */,
 				070B1FE8251CA17C007342B8 /* model.swift in Sources */,
 				070B1F96251B5FE9007342B8 /* ViewController.swift in Sources */,
 				07461576254EF80C00202F5C /* mogrige.xcdatamodeld in Sources */,
-				07461623254FECA100202F5C /* MoodboardList+CoreDataClass.swift in Sources */,
 				070B1F92251B5FE9007342B8 /* AppDelegate.swift in Sources */,
 				2CF8270D2545BA9600EAB26B /* KeywordListTableViewCell.swift in Sources */,
+				07D576242560EEBC00D6CF08 /* DataManager.swift in Sources */,
 				070B1F94251B5FE9007342B8 /* SceneDelegate.swift in Sources */,
 				2C4AD126254539F4008CCC3C /* KeywordListViewController.swift in Sources */,
 				078955AC252C263A00DB66E3 /* DetailViewController.swift in Sources */,

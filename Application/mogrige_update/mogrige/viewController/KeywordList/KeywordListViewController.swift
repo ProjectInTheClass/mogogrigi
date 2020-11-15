@@ -10,6 +10,22 @@ import UIKit
 //필수 프로토콜 추가(dataSource, Delegate)
 class KeywordListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     
+    let formatter: DateFormatter = {
+        let f = DateFormatter()
+        f.dateStyle = .long
+        f.timeStyle = .short
+        f.locale = Locale(identifier: "Ko_kr")
+        return f
+    }()
+
+    var token: NSObjectProtocol?
+    
+    deinit {
+        if let token = token {
+            NotificationCenter.default.removeObserver(token)
+        }
+    }
+    
     var filteredData:[String] = []
     var keywordsData:[String] = []
     let cellIdentifier: String = "cell"
@@ -21,8 +37,8 @@ class KeywordListViewController: UIViewController, UITableViewDelegate, UITableV
     @IBOutlet weak var keywordListTableView: UITableView!
     @IBOutlet weak var boardTotalNum: UILabel!
     
-    @IBAction func closeModal(
-            _ segue: UIStoryboardSegue) {
+    @IBAction func closeModal(_ segue: UIStoryboardSegue) {
+        
         }
     
     //
@@ -37,7 +53,8 @@ class KeywordListViewController: UIViewController, UITableViewDelegate, UITableV
     
     // tableView 열 세팅
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return filteredData.count
+        //return filteredData.count
+        return DataManager.shared.boarList.count
     }
     
     // tableView 세팅
@@ -48,16 +65,20 @@ class KeywordListViewController: UIViewController, UITableViewDelegate, UITableV
     
     // tableView에 데이터 입력
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: "customCell", for: indexPath) as! KeywordListTableViewCell
                 
-        let postListCell = filteredData[indexPath.row]
+        let target = DataManager.shared.boarList[indexPath.row]
+        cell.keywordTitle?.text = "\(String(describing: target.keyword1)), \(String(describing: target.keyword2)), \(String(describing: target.keyword3))"
+        cell.detailTextLabel?.text = formatter.string(for: target.registrationDate)
+        //cell.detailTextLabel?.text = formatter.string(for: target.insertDate)
+        
+        // let postListCell = filteredData[indexPath.row]
         
         //board 내 그림 번호 설정 > 삭제
         //cell.boardNum?.text = "Board #\(indexPath.row + 1)"
         
         //키워드로 타이틀 설정
-        cell.keywordTitle?.text = postListCell
+        //cell.keywordTitle?.text = postListCell
         cell.configure()
 
         return cell
@@ -66,11 +87,12 @@ class KeywordListViewController: UIViewController, UITableViewDelegate, UITableV
     //tableView 스와이프해서 삭제하기
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         
+        var target = DataManager.shared.boarList
         if editingStyle == UITableViewCell.EditingStyle.delete {
-            Post_List.remove(at: indexPath.row)
+            target.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
             
-            boardTotalNum.text = "총\(Post_List.count)개의 보드"
+            boardTotalNum.text = "총\(target.count)개의 보드"
         }
         
     }
@@ -81,6 +103,10 @@ class KeywordListViewController: UIViewController, UITableViewDelegate, UITableV
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        token = NotificationCenter.default.addObserver(forName: ModalViewController.newListDidInsert, object: nil, queue: OperationQueue.main) {[weak self] (noti) in
+            //self?.tableView.reloadData()
+        }
+        
         //UIview뷰 배경화면 적용
         let backgroundImg = UIImage(named: "background_grain_big")
         view.backgroundColor = UIColor(patternImage: backgroundImg!)
@@ -89,8 +115,10 @@ class KeywordListViewController: UIViewController, UITableViewDelegate, UITableV
         //검색바 적용
         searchBar.delegate = self
         
-        for item in Post_List {
-            keywordsData.append(item.keywords)
+        let target = DataManager.shared.boarList
+        
+        for item in target {
+            keywordsData.append(contentsOf: [item.keyword1!, item.keyword2!, item.keyword3!])
         }
         
         filteredData = keywordsData
@@ -98,8 +126,11 @@ class KeywordListViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        boardTotalNum.text = "총 \(Post_List.count)개의 보드"
+        let target = DataManager.shared.boarList
+        boardTotalNum.text = "총 \(target.count)개의 보드"
         //keywordListTableView.tableFooterView = UIView(frame: CGRect.zero)
+        DataManager.shared.fetchBoard()
+        //tableView.reloadData()
     }
     
     //검색바 config
