@@ -1,21 +1,11 @@
 # Uncomment the next line to define a global platform for your project
 # platform :ios, '9.0'
 
-target 'mogrige' do
+target 'NewMogrige' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 	pod 'YPImagePicker'
 
-  # Pods for mogrige
-	
-
-  target 'mogrigeTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
-  target 'mogrigeUITests' do
-    # Pods for testing
-  end
+  # Pods for NewMogrige
 
 end
