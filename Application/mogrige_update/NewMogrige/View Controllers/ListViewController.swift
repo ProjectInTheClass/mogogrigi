@@ -41,6 +41,14 @@ class ListViewController: UIViewController, UITableViewDelegate, UISearchBarDele
     }
     
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let cell = sender as? UITableViewCell, let indextPath = tableView.indexPath(for: cell) {
+            if let vc = segue.destination as? DetailViewController {
+                vc.board = DataManager.shared.boarList[indextPath.row]
+            }
+        }
+    }
+    
     
     @IBAction func clickAddBttn(_ sender: Any) {
         performSegue(withIdentifier: "toRandom", sender: nil)
@@ -81,22 +89,10 @@ class ListViewController: UIViewController, UITableViewDelegate, UISearchBarDele
         token = NotificationCenter.default.addObserver(forName: EditorViewController.newListDidInsert, object: nil, queue: OperationQueue.main) {[weak self] (noti) in
             self?.tableView.reloadData()
         }
-        
     }
-    
+} // ================ viewDidLoad ================ //
 
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
-}
 
 extension ListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -117,9 +113,7 @@ extension ListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = storyboard?.instantiateViewController(identifier: "DetailMoodboard") as? DetailViewController
-        self.navigationController?.pushViewController(vc!, animated: true)
-        vc?.board = DataManager.shared.boarList[indexPath.row]
+
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {

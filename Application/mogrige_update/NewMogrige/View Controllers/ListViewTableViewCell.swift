@@ -30,6 +30,8 @@ class ListViewTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         
+        selectionStyle = .none
+        
         //언더라인 디자인
         let thickness: CGFloat = 0.4
         let bottomLine1 = CALayer()
