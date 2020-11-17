@@ -21,6 +21,11 @@ class ViewController: UIViewController {
     var lastKeywords: Array<Any> = []
     
     
+    @IBAction func cancel(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    
     //swipe animation 구현
     @IBAction func panCard(_ sender: UIPanGestureRecognizer) {
         let card = sender.view!
@@ -161,9 +166,6 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if #available(iOS 13.0, *) {
-                overrideUserInterfaceStyle = .light
-            }
         
         naviFont()
         

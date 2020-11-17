@@ -24,19 +24,21 @@ class EditorViewController: UIViewController, UIImagePickerControllerDelegate, U
     @IBOutlet weak var subDesBack: UIView!
     @IBOutlet weak var imgPickButton: UIButton!
     
+    @IBOutlet weak var photoGuide: UILabel!
+    
     
     @IBAction func toListView(_ sender: Any) {
         if subDescription?.text != nil {
             // create the alert
-            let alert = UIAlertController(title: "돌아가기", message: "지금까지 작성한 내용은 저장되지 않습니다. 처음으로 돌아갈까요?", preferredStyle: UIAlertController.Style.alert)
+            let alert = UIAlertController(title: "", message: "지금까지 작성한 내용은 저장되지 않습니다. 처음으로 돌아갈까요?", preferredStyle: UIAlertController.Style.alert)
 
             // add the actions (buttons)
             alert.addAction(UIAlertAction(title: "남아있기", style: UIAlertAction.Style.default, handler: nil))
-            alert.addAction(UIAlertAction(title: "처음으로", style: UIAlertAction.Style.cancel, handler: {ACTION in self.dismiss(animated: true)}))
+            alert.addAction(UIAlertAction(title: "처음으로", style: UIAlertAction.Style.cancel, handler: {ACTION in self.performSegue(withIdentifier: "UnwindToHome", sender: self)}))
 
             // show the alert
                 self.present(alert, animated: true, completion: nil)
-        } else {dismiss(animated: true)}
+        } else {performSegue(withIdentifier: "UnwindToHome", sender: self)}
     }
     
     
@@ -46,7 +48,6 @@ class EditorViewController: UIViewController, UIImagePickerControllerDelegate, U
         
         NotificationCenter.default.post(name: EditorViewController.newListDidInsert, object: nil)
         
-        // dismiss(animated: true, completion: nil)
         performSegue(withIdentifier: "UnwindToHome", sender: self)
         
     }
@@ -60,11 +61,8 @@ class EditorViewController: UIViewController, UIImagePickerControllerDelegate, U
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if #available(iOS 13.0, *) {
-                overrideUserInterfaceStyle = .light
-            }
-        
         naviFont()
+        photoGuide.textColor = UIColor(red: 180/255, green: 176/255, blue: 168/255, alpha: 1)
         
         // title Label에 랜덤키워드 띄우기
         self.mainTitle.text = "\(selectedTitle[0]),\(selectedTitle[1]), \(selectedTitle[2]) "

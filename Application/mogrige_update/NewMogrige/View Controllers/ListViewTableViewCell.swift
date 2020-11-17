@@ -29,6 +29,14 @@ class ListViewTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        //언더라인 디자인
+        let thickness: CGFloat = 0.4
+        let bottomLine1 = CALayer()
+        
+        bottomLine1.frame = CGRect(x: 0.0, y: self.dateLabel.frame.size.height + 5, width: self.dateLabel.frame.width, height: thickness)
+        bottomLine1.backgroundColor = UIColor(red: 190/255, green: 190/255, blue: 190/255, alpha: 1).cgColor
+        dateLabel.layer.addSublayer(bottomLine1)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

@@ -12,6 +12,8 @@ class ListViewController: UIViewController, UITableViewDelegate, UISearchBarDele
     
     @IBOutlet weak var addButton: UIButton!
     
+    @IBOutlet weak var filterButton: UIButton!
+    
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     
@@ -49,16 +51,21 @@ class ListViewController: UIViewController, UITableViewDelegate, UISearchBarDele
         tableView.reloadData()
     }
     
+
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if #available(iOS 13.0, *) {
-                overrideUserInterfaceStyle = .light
-            }
-        
         naviFont()
         addButton.floatinBtn()
+        filterButton.filterBtn()
+        tableView.backgroundColor = UIColor.clear
+        
+        let emptyImg = UIImage()
+        searchBar.backgroundImage = emptyImg
+        searchBar.backgroundColor = UIColor.clear
+
         
         token = NotificationCenter.default.addObserver(forName: EditorViewController.newListDidInsert, object: nil, queue: OperationQueue.main) {[weak self] (noti) in
             self?.tableView.reloadData()
@@ -66,7 +73,6 @@ class ListViewController: UIViewController, UITableViewDelegate, UISearchBarDele
         
     }
     
-
 
     /*
     // MARK: - Navigation

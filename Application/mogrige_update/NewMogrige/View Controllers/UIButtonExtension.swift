@@ -9,7 +9,7 @@ import UIKit
 
 extension UIButton {
     func floatinBtn(){
-        backgroundColor = UIColor.darkGray
+        backgroundColor = UIColor(red: 124/255, green: 82/255, blue: 40/255, alpha: 1)
         layer.cornerRadius = frame.height / 2
         layer.shadowOpacity = 0.25
         layer.shadowRadius = 5
@@ -20,10 +20,20 @@ extension UIButton {
     func imgPickBtn(){
         //사진버튼 커스텀
         layer.cornerRadius = 23
-        backgroundColor = UIColor(red: 222/255, green: 218/255, blue: 208/255, alpha: 1)
+        backgroundColor = UIColor(red: 213/255, green: 208/255, blue: 196/255, alpha: 1)
         layer.shadowColor = UIColor.darkGray.cgColor
-        layer.shadowOffset = CGSize(width: 0, height: 2)
-        layer.shadowRadius = 2.5
-        layer.shadowOpacity = 0.25
+        layer.shadowOffset = CGSize(width: 0, height: 7)
+        layer.shadowRadius = 4
+        layer.shadowOpacity = 0.15
     }
+    
+    func filterBtn() {
+        backgroundColor = UIColor(red: 213/255, green: 208/255, blue: 196/255, alpha: 1)
+        layer.cornerRadius = frame.height / 2
+        layer.shadowColor = UIColor.darkGray.cgColor
+        layer.shadowOffset = CGSize(width: 0, height: 1.2)
+        layer.shadowRadius = 1
+        layer.shadowOpacity = 0.4
+    }
+    
 }

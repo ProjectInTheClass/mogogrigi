@@ -74,10 +74,6 @@ class DetailViewController: UIViewController, UIScrollViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if #available(iOS 13.0, *) {
-                overrideUserInterfaceStyle = .light
-            }
-        
         first?.text = board?.keyword1
         second?.text = board?.keyword2
         third?.text = board?.keyword3
@@ -161,9 +157,7 @@ class DetailViewController: UIViewController, UIScrollViewDelegate {
   
     }
     
-    @IBAction func shuffle() {
-        board?.images?.shuffle()
-    }
+    
 
 }
 
