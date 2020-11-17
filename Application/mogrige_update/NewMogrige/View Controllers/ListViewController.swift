@@ -21,6 +21,8 @@ class ListViewController: UIViewController, UITableViewDelegate, UISearchBarDele
         
     }
     
+    var dummyData: [UIImage] = [UIImage(named: "dummy1")!, UIImage(named: "dummy2")!, UIImage(named: "dummy3")!, UIImage(named: "dummy4")!, UIImage(named: "dummy5")!]
+    
 
     let formatter: DateFormatter = {
         let f = DateFormatter()
@@ -49,6 +51,15 @@ class ListViewController: UIViewController, UITableViewDelegate, UISearchBarDele
         
         DataManager.shared.fetchBoard()
         tableView.reloadData()
+        
+        if DataManager.shared.boarList.count == 0 {
+            DataManager.shared.addnewBoard("고양이", "저녁노을", "흔들의자", paraMainText: "#고양이는 #저녁노을 지는 창가앞 #흔들의자에 몸을 둥글게 말고 잠들었다.", paraSubText: "전체적으로 브라운과 오렌지의 노을 빛을 배색하고 나무질감의 흔들의자와 담요를 적절히 자리를 잡아 그린다. 고양이는 실루엣으로만 표현하고 전체적으로 대비를 강하게 한다.", dummyData)
+            
+            NotificationCenter.default.post(name: EditorViewController.newListDidInsert, object: nil)
+        } else {
+            return
+        }
+        
     }
     
 
@@ -73,6 +84,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UISearchBarDele
         
     }
     
+
 
     /*
     // MARK: - Navigation
