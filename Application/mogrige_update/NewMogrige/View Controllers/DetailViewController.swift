@@ -69,6 +69,13 @@ class DetailViewController: UIViewController, UIScrollViewDelegate {
     }
     
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination.children.first as? EditorViewController {
+            vc.editTarget = board
+        }
+    }
+    
+    
    
     
     override func viewDidLoad() {

@@ -11,6 +11,10 @@ import YPImagePicker
 
 class EditorViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
         
+    //게시물 수정을 위한 코드
+    var editTarget : Board?
+    
+    
     let imagePicker: UIImagePickerController! = UIImagePickerController()
     
     var selectedTitle: [String] = []
@@ -61,20 +65,33 @@ class EditorViewController: UIViewController, UIImagePickerControllerDelegate, U
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //게시물 수정코드
+        if let board = editTarget {
+            navigationItem.title = "Edit a Board"
+            mainDescription.text = board.text1
+            subDescription.text = board.text2
+            mainTitle.text = "\(editTarget?.keyword1), \(editTarget?.keyword2), \(editTarget?.keyword3)"
+        }else {
+            navigationItem.title = "Create New Board"
+            mainDescription.text = "Place Holder"
+            subDescription.text = "Place Holder"
+            mainTitle.text = "\(selectedTitle[0]),\(selectedTitle[1]), \(selectedTitle[2])"
+        }
+        
         naviFont()
         photoGuide.textColor = UIColor(red: 180/255, green: 176/255, blue: 168/255, alpha: 1)
         
         // title Label에 랜덤키워드 띄우기
-        self.mainTitle.text = "\(selectedTitle[0]),\(selectedTitle[1]), \(selectedTitle[2]) "
+        
         
         // textview placeholder 기본 설정
-        mainDescription?.delegate = self
-        mainDescription?.text = "#고양이는 #저녁노을 지는 창가앞 #흔들의자에 몸을 둥글게 말고 잠들었다."
-        mainDescription?.textColor = UIColor.lightGray
+        mainDescription.delegate = self
+        mainDescription.text = "#고양이는 #저녁노을 지는 창가앞 #흔들의자에 몸을 둥글게 말고 잠들었다."
+        mainDescription.textColor = UIColor.lightGray
         
-        subDescription?.delegate = self
-        subDescription?.text = "전체적으로 브라운과 오렌지의 노을 빛을 배색하고 나무질감의 흔들의자와 담요를 적절히 자리를 잡아 그린다. 고양이는 실루엣으로만 표현하고 전체적으로 대비를 강하게 한다."
-        subDescription?.textColor = UIColor.lightGray
+        subDescription.delegate = self
+        subDescription.text = "전체적으로 브라운과 오렌지의 노을 빛을 배색하고 나무질감의 흔들의자와 담요를 적절히 자리를 잡아 그린다. 고양이는 실루엣으로만 표현하고 전체적으로 대비를 강하게 한다."
+        subDescription.textColor = UIColor.lightGray
         
         //텍스트 가리는 키보드 대응코드1
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardApear), name: UIResponder.keyboardWillShowNotification, object: nil)
@@ -199,10 +216,10 @@ extension EditorViewController: UITextViewDelegate {
     }
     
     func textViewDidEndEditing(_ textView: UITextView) {
-        if mainDescription?.text == "" {
+        if mainDescription.text == "" {
             firstTextViewSetupView()
         }
-        if subDescription?.text == "" {
+        if subDescription.text == "" {
             secondTextViewSetupView()
         }
     }
