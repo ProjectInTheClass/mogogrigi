@@ -755,6 +755,9 @@
                                                                 <constraint firstAttribute="height" constant="35" id="lS5-Ig-aJC"/>
                                                             </constraints>
                                                             <state key="normal" image="bookmark" catalog="system"/>
+                                                            <connections>
+                                                                <action selector="clickedBookmark:" destination="HOn-EA-xCn" eventType="touchUpInside" id="ZZn-EO-WPz"/>
+                                                            </connections>
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="lo3-pP-2oo">
                                                             <rect key="frame" x="12" y="50.5" width="295.5" height="23.5"/>
@@ -791,7 +794,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="bookmarkButton" destination="VHj-9d-P1T" id="Au1-C3-h46"/>
+                                            <outlet property="bookmarkBtn" destination="VHj-9d-P1T" id="8BP-YL-brF"/>
                                             <outlet property="cellView" destination="Gf8-mn-cnT" id="F0J-QB-zA4"/>
                                             <outlet property="dateLabel" destination="Mz9-Ye-QH0" id="93m-Ez-ASg"/>
                                             <outlet property="keywordTitle" destination="lo3-pP-2oo" id="iRw-vc-3jL"/>

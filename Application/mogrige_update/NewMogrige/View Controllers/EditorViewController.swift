@@ -55,7 +55,7 @@ class EditorViewController: UIViewController, UIImagePickerControllerDelegate, U
                     self.present(photoAlert, animated: true, completion: nil)
                 } else {
                     //코어데이터 전달
-                    DataManager.shared.addnewBoard(selectedTitle[0], selectedTitle[1], selectedTitle[2], paraMainText: mainDescription.text, paraSubText: subDescription.text, selectedImg)
+                    DataManager.shared.addnewBoard(selectedTitle[0], selectedTitle[1], selectedTitle[2], paraMainText: mainDescription.text, paraSubText: subDescription.text, selectedImg, false)
                     NotificationCenter.default.post(name: EditorViewController.newListDidInsert, object: nil)
                     performSegue(withIdentifier: "UnwindToHome", sender: self)
                     DataManager.shared.saveContext()

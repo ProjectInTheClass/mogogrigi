@@ -11,20 +11,38 @@ class ListViewTableViewCell: UITableViewCell {
     
     //cell 커스터마이즈
     //let cellView: UIView
-    
+    var editTarget : Board?
     
     @IBOutlet weak var keywordTitle: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     
-
+    @IBOutlet weak var bookmarkBtn: UIButton!
+    
     @IBOutlet weak var cellView: UIView! = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
-
-    @IBOutlet weak var bookmarkButton: UIButton!
+    
+    @IBAction func clickedBookmark(_ sender: Any) {
+        
+        //        if   bookmark.tag == 0 {
+        //             bookmark.setImage(UIImage(systemName: "bookmark.fill"), for: .normal)
+        //             bookmark.tag = 1
+        //             }
+        //
+        //        else {
+        //             bookmark.setImage(UIImage(systemName: "bookmark"), for: .normal)
+        //             bookmark.tag = 0
+        //        }
+        
+        //위에거 실행하면 이미지 클릭만 됨
+        //https://www.youtube.com/watch?v=ZfuC1Ntasys&list=PLziSvys01OemZoYotSrwUVx_CbZUF7v17&index=20
+        //https://stackoverflow.com/questions/49225531/create-a-favorite-button-that-connects-to-a-favorite-tableview-in-swift
+        //위 주소들 방법 총동원해서 해볼 수 있지 않을까요
+       
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
