@@ -14,6 +14,7 @@
 		AA5225182561A071000C27F9 /* NotoSerifCJKkr-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = AA5225152561A06C000C27F9 /* NotoSerifCJKkr-Medium.otf */; };
 		AA52251F2561A088000C27F9 /* NotoSerifCJKkr-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = AA52251C2561A081000C27F9 /* NotoSerifCJKkr-SemiBold.otf */; };
 		AA5225212561A08B000C27F9 /* NotoSerifCJKkr-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = AA52251D2561A082000C27F9 /* NotoSerifCJKkr-Regular.otf */; };
+		AA94C88225650F1E006C723A /* TextSizeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA94C88125650F1E006C723A /* TextSizeExtension.swift */; };
 		AAC005342562A3D700484F7A /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC005332562A3D700484F7A /* UIButtonExtension.swift */; };
 		AAC0053D2562A7B100484F7A /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC0053C2562A7B100484F7A /* ListViewController.swift */; };
 		CC7671A7A38A32C516EE1D7D /* Pods_NewMogrige.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D09D3CC5918AC2B3DE2F529C /* Pods_NewMogrige.framework */; };
@@ -38,6 +39,7 @@
 		AA5225152561A06C000C27F9 /* NotoSerifCJKkr-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSerifCJKkr-Medium.otf"; sourceTree = "<group>"; };
 		AA52251C2561A081000C27F9 /* NotoSerifCJKkr-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSerifCJKkr-SemiBold.otf"; sourceTree = "<group>"; };
 		AA52251D2561A082000C27F9 /* NotoSerifCJKkr-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSerifCJKkr-Regular.otf"; sourceTree = "<group>"; };
+		AA94C88125650F1E006C723A /* TextSizeExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextSizeExtension.swift; sourceTree = "<group>"; };
 		AAC005332562A3D700484F7A /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		AAC0053C2562A7B100484F7A /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		D09D3CC5918AC2B3DE2F529C /* Pods_NewMogrige.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NewMogrige.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -133,6 +135,7 @@
 				07F3002D25621E7B00C57387 /* ListViewTableViewCell.swift */,
 				AA4328B12562BBEA00AB3A61 /* NaviFontExtension.swift */,
 				AAC005332562A3D700484F7A /* UIButtonExtension.swift */,
+				AA94C88125650F1E006C723A /* TextSizeExtension.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -284,6 +287,7 @@
 				07F3002E25621E7B00C57387 /* ListViewTableViewCell.swift in Sources */,
 				AAC0053D2562A7B100484F7A /* ListViewController.swift in Sources */,
 				F583072E25614CFA00F0D413 /* DetailViewController.swift in Sources */,
+				AA94C88225650F1E006C723A /* TextSizeExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

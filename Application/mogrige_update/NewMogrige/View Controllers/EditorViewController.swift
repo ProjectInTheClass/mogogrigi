@@ -89,11 +89,11 @@ class EditorViewController: UIViewController, UIImagePickerControllerDelegate, U
         
         // textview placeholder 기본 설정
         mainDescription.delegate = self
-        mainDescription.text = placeHolder[0]
+        mainDescription.text = "#고양이는 #저녁노을 지는 창가앞 #흔들의자에 몸을 둥글게 말고 잠들었다."
         mainDescription.textColor = UIColor.lightGray
         
         subDescription.delegate = self
-        subDescription.text = placeHolder[1]
+        subDescription.text = "전체적으로 브라운과 오렌지의 노을 빛을 배색하고 나무질감의 흔들의자와 담요를 적절히 자리를 잡아 그린다. 고양이는 실루엣으로만 표현하고 전체적으로 대비를 강하게 한다."
         subDescription.textColor = UIColor.lightGray
         
         //텍스트 가리는 키보드 대응코드1
@@ -191,21 +191,21 @@ class EditorViewController: UIViewController, UIImagePickerControllerDelegate, U
     
     // textView placeholder 구현 함수 //펑션나누기
     func firstTextViewSetupView() {
-        if mainDescription?.text == placeHolder[0] {
-            mainDescription?.text = nil
+        if mainDescription?.text == "세 단어로 하나의 타이틀 문장을 만들어 주세요" {
+            mainDescription?.text = ""
             mainDescription?.textColor = UIColor.black
-        } else if mainDescription?.text == nil {
-            mainDescription?.text = placeHolder[0]
+        } else if mainDescription?.text == "" {
+            mainDescription?.text = "세 단어로 하나의 타이틀 문장을 만들어 주세요"
             mainDescription?.textColor = UIColor.lightGray
         }
     }
     
     func secondTextViewSetupView() {
-        if subDescription?.text == placeHolder[1] {
-            subDescription?.text = nil
+        if subDescription?.text == "떠오른 영감을 설명해 주세요" {
+            subDescription?.text = ""
             subDescription?.textColor = UIColor.black
-        } else if subDescription?.text == nil {
-            subDescription?.text = placeHolder[1]
+        } else if subDescription?.text == "" {
+            subDescription?.text = "떠오른 영감을 설명해 주세요"
             subDescription?.textColor = UIColor.lightGray
         }
   
@@ -216,17 +216,15 @@ class EditorViewController: UIViewController, UIImagePickerControllerDelegate, U
 extension EditorViewController: UITextViewDelegate {
     
     func textViewDidBeginEditing(_ textView: UITextView) {
-        if mainDescription.text == placeHolder[0] {
-            firstTextViewSetupView()
-        } else if subDescription.text == placeHolder[1] {
-            secondTextViewSetupView()
-        }
+        firstTextViewSetupView()
+        secondTextViewSetupView()
     }
     
     func textViewDidEndEditing(_ textView: UITextView) {
-        if mainDescription.text == nil {
+        if mainDescription.text == "" {
             firstTextViewSetupView()
-        } else if subDescription.text == nil {
+        }
+        if subDescription.text == "" {
             secondTextViewSetupView()
         }
     }
@@ -238,21 +236,27 @@ extension EditorViewController: UITextViewDelegate {
         return true
     }
     
+    
+
+    
 }
 
 extension EditorViewController {
     static let newListDidInsert = Notification.Name(rawValue: "newListDidInsert")
 }
 
-
-extension UIViewController {
-    func hideKeyboard() {
+extension UIViewController
+{
+    func hideKeyboard()
+    {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(
             target: self,
             action: #selector(UIViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
     }
-    @objc func dismissKeyboard() {
+    @objc func dismissKeyboard()
+    {
         view.endEditing(true)
     }
 }
+
