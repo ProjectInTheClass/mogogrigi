@@ -48,21 +48,20 @@ class EditorViewController: UIViewController, UIImagePickerControllerDelegate, U
     
     @IBAction func save(_ sender: Any) {
         
-        DataManager.shared.addnewBoard(selectedTitle[0], selectedTitle[1], selectedTitle[2], paraMainText: mainDescription.text, paraSubText: subDescription.text, selectedImg)
-        
-        NotificationCenter.default.post(name: EditorViewController.newListDidInsert, object: nil)
-        
-        performSegue(withIdentifier: "UnwindToHome", sender: self)
-        
-        DataManager.shared.saveContext()
+        if selectedImg.count < 5 {
+                    let photoAlert = UIAlertController(title: "", message: "반드시 5장의 사진을 선택해주세요.", preferredStyle: UIAlertController.Style.alert)
+                    photoAlert.addAction(UIAlertAction(title: "계속하기", style: UIAlertAction.Style.default, handler: nil))
+                    
+                    self.present(photoAlert, animated: true, completion: nil)
+                } else {
+                    //코어데이터 전달
+                    DataManager.shared.addnewBoard(selectedTitle[0], selectedTitle[1], selectedTitle[2], paraMainText: mainDescription.text, paraSubText: subDescription.text, selectedImg, false)
+                    NotificationCenter.default.post(name: EditorViewController.newListDidInsert, object: nil)
+                    performSegue(withIdentifier: "UnwindToHome", sender: self)
+                    DataManager.shared.saveContext()
+                }
         
     }
-    
-
-    
-        
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -89,11 +88,11 @@ class EditorViewController: UIViewController, UIImagePickerControllerDelegate, U
         
         // textview placeholder 기본 설정
         mainDescription.delegate = self
-        mainDescription.text = "#고양이는 #저녁노을 지는 창가앞 #흔들의자에 몸을 둥글게 말고 잠들었다."
+        mainDescription.text = placeHolder[0]
         mainDescription.textColor = UIColor.lightGray
         
         subDescription.delegate = self
-        subDescription.text = "전체적으로 브라운과 오렌지의 노을 빛을 배색하고 나무질감의 흔들의자와 담요를 적절히 자리를 잡아 그린다. 고양이는 실루엣으로만 표현하고 전체적으로 대비를 강하게 한다."
+        subDescription.text = placeHolder[1]
         subDescription.textColor = UIColor.lightGray
         
         //텍스트 가리는 키보드 대응코드1
@@ -117,6 +116,8 @@ class EditorViewController: UIViewController, UIImagePickerControllerDelegate, U
          
         
         imgPickButton.imgPickBtn()
+        
+        self.hideKeyboard()
         
     } //========viewDidLoad===========//
     
@@ -189,21 +190,21 @@ class EditorViewController: UIViewController, UIImagePickerControllerDelegate, U
     
     // textView placeholder 구현 함수 //펑션나누기
     func firstTextViewSetupView() {
-        if mainDescription?.text == "세 단어로 하나의 타이틀 문장을 만들어 주세요" {
-            mainDescription?.text = ""
+        if mainDescription?.text == placeHolder[0] {
+            mainDescription?.text = nil
             mainDescription?.textColor = UIColor.black
         } else if mainDescription?.text == "" {
-            mainDescription?.text = "세 단어로 하나의 타이틀 문장을 만들어 주세요"
+            mainDescription?.text = placeHolder[1]
             mainDescription?.textColor = UIColor.lightGray
         }
     }
     
     func secondTextViewSetupView() {
-        if subDescription?.text == "떠오른 영감을 설명해 주세요" {
-            subDescription?.text = ""
+        if subDescription?.text == placeHolder[1] {
+            subDescription?.text = nil
             subDescription?.textColor = UIColor.black
-        } else if subDescription?.text == "" {
-            subDescription?.text = "떠오른 영감을 설명해 주세요"
+        } else if subDescription?.text == nil {
+            subDescription?.text = placeHolder[1]
             subDescription?.textColor = UIColor.lightGray
         }
   
@@ -214,29 +215,58 @@ class EditorViewController: UIViewController, UIImagePickerControllerDelegate, U
 extension EditorViewController: UITextViewDelegate {
     
     func textViewDidBeginEditing(_ textView: UITextView) {
-        firstTextViewSetupView()
-        secondTextViewSetupView()
-    }
-    
-    func textViewDidEndEditing(_ textView: UITextView) {
-        if mainDescription.text == "" {
+        if textView == mainDescription {
             firstTextViewSetupView()
         }
-        if subDescription.text == "" {
+        if textView == subDescription {
             secondTextViewSetupView()
         }
     }
     
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if mainDescription.text == nil {
+            firstTextViewSetupView()
+        }
+        if subDescription.text == nil {
+            secondTextViewSetupView()
+        }
+    }
+    
+    
+    //최대 글자수 제한
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         if text == "\n" {
             textView.resignFirstResponder()
         }
+        var newText = textView.text!
+        newText.removeAll { (character) -> Bool in
+        return character == " " || character == "\n" }
+        if textView == mainDescription {return (newText.count + text.count) <= 50}
+        else if textView == subDescription{return (newText.count + text.count) <= 100}
         return true
     }
+    
+    
+
     
 }
 
 extension EditorViewController {
     static let newListDidInsert = Notification.Name(rawValue: "newListDidInsert")
+}
+
+extension UIViewController
+{
+    func hideKeyboard()
+    {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(
+            target: self,
+            action: #selector(UIViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
+    }
+    @objc func dismissKeyboard()
+    {
+        view.endEditing(true)
+    }
 }
 
