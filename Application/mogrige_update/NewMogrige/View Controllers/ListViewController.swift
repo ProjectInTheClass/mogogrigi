@@ -70,9 +70,6 @@ class ListViewController: UIViewController, UITableViewDelegate, UISearchBarDele
         
     }
     
-
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.overrideUserInterfaceStyle = .light
@@ -90,6 +87,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UISearchBarDele
         token = NotificationCenter.default.addObserver(forName: EditorViewController.newListDidInsert, object: nil, queue: OperationQueue.main) {[weak self] (noti) in
             self?.tableView.reloadData()
         }
+        self.hideKeyboard()
     }
     
     override func viewDidAppear(_ animated: Bool) {
