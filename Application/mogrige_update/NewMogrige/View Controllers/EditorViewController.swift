@@ -118,6 +118,8 @@ class EditorViewController: UIViewController, UIImagePickerControllerDelegate, U
         
         imgPickButton.imgPickBtn()
         
+        self.hideKeyboard()
+        
     } //========viewDidLoad===========//
     
     
@@ -234,9 +236,27 @@ extension EditorViewController: UITextViewDelegate {
         return true
     }
     
+    
+
+    
 }
 
 extension EditorViewController {
     static let newListDidInsert = Notification.Name(rawValue: "newListDidInsert")
+}
+
+extension UIViewController
+{
+    func hideKeyboard()
+    {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(
+            target: self,
+            action: #selector(UIViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
+    }
+    @objc func dismissKeyboard()
+    {
+        view.endEditing(true)
+    }
 }
 

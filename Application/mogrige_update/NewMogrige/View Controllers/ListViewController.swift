@@ -125,5 +125,9 @@ extension ListViewController: UITableViewDataSource {
         cell.backgroundColor = .clear
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+            self.searchBar.resignFirstResponder()
+        }
+    
     
 }
