@@ -28,8 +28,8 @@ class DetailViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var third: UILabel?
     
     
-    @IBOutlet weak var textFrame2: UILabel?
-    @IBOutlet weak var textFrame3: UILabel?
+    @IBOutlet weak var textFrame2: UILabel!
+    @IBOutlet weak var textFrame3: UILabel!
     
     @IBAction func cancel(_ sender: Any) {
         dismiss(animated: true, completion: nil)
@@ -52,8 +52,8 @@ class DetailViewController: UIViewController, UIScrollViewDelegate {
             attributedText = NSAttributedString(string: (board?.text1)!, attributes: [.paragraphStyle : paragraphStyle])
         }
         
-        textFrame2?.numberOfLines = 0
         textFrame2?.sizeToFit()
+        textFrame3?.sizeToFit()
         textFrame2?.attributedText = attributedText
     }
     
@@ -61,16 +61,20 @@ class DetailViewController: UIViewController, UIScrollViewDelegate {
         paragraphStyle.lineSpacing = 3.5//이게 줄간격
         var attributedText: NSAttributedString
         if board?.text2 == nil {
-            attributedText = NSAttributedString(string: "전체적으로 브라운과 오렌지의 노을 빛으로 배색하고 포인트 컬러를 체크무늬에 표현한다. 늘어진 자세의 고양이는 검은 실루엣으로 하여 그림자와 그 형태로만 간접적으로 그려 쓸쓸함과 따뜻함을 동시에 보여준다.", attributes: [.paragraphStyle : paragraphStyle])
+            attributedText = NSAttributedString(string: "전체적으로 브라운과 오렌지의 노을 빛을 배색하고 나무질감의 흔들의자와 담요를 적절히 자리잡아 그린다. 고양이는 실로엣으로 표현하고 전체적으로 대비를 강하게 준다.", attributes: [.paragraphStyle : paragraphStyle])
         } else {
             attributedText = NSAttributedString(string: (board?.text2)!, attributes: [.paragraphStyle : paragraphStyle])
         }
         
-        /// let
+        textFrame3.adjustsFontSizeToFitWidth = true
+        textFrame3.adjustsFontForContentSizeCategory = true
+        textFrame3.minimumScaleFactor = 0.5
         textFrame3?.numberOfLines = 0
+        //view.addSubview(textFrame3)
         textFrame3?.sizeToFit()
         textFrame3?.attributedText = attributedText
     }
+    
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -138,6 +142,8 @@ class DetailViewController: UIViewController, UIScrollViewDelegate {
         
         view.backgroundColor = UIColor(red: 240/255, green: 239/255, blue: 238/255, alpha: 1)
 
+        
+        
         textFrame2Style()
         textFrame3Style()
         
