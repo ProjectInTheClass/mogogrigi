@@ -48,13 +48,18 @@ class EditorViewController: UIViewController, UIImagePickerControllerDelegate, U
     
     @IBAction func save(_ sender: Any) {
         
-        DataManager.shared.addnewBoard(selectedTitle[0], selectedTitle[1], selectedTitle[2], paraMainText: mainDescription.text, paraSubText: subDescription.text, selectedImg)
-        
-        NotificationCenter.default.post(name: EditorViewController.newListDidInsert, object: nil)
-        
-        performSegue(withIdentifier: "UnwindToHome", sender: self)
-        
-        DataManager.shared.saveContext()
+        if selectedImg.count < 5 {
+                    let photoAlert = UIAlertController(title: "", message: "반드시 5장의 사진을 선택해주세요.", preferredStyle: UIAlertController.Style.alert)
+                    photoAlert.addAction(UIAlertAction(title: "계속하기", style: UIAlertAction.Style.default, handler: nil))
+                    
+                    self.present(photoAlert, animated: true, completion: nil)
+                } else {
+                    //코어데이터 전달
+                    DataManager.shared.addnewBoard(selectedTitle[0], selectedTitle[1], selectedTitle[2], paraMainText: mainDescription.text, paraSubText: subDescription.text, selectedImg)
+                    NotificationCenter.default.post(name: EditorViewController.newListDidInsert, object: nil)
+                    performSegue(withIdentifier: "UnwindToHome", sender: self)
+                    DataManager.shared.saveContext()
+                }
         
     }
     
