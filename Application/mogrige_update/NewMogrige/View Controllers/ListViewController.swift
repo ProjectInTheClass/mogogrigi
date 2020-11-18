@@ -13,7 +13,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UISearchBarDele
     @IBOutlet weak var addButton: UIButton!
     
     @IBOutlet weak var filterButton: UIButton!
-    
+    @IBOutlet weak var boardCount: UILabel!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     
@@ -75,6 +75,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UISearchBarDele
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.overrideUserInterfaceStyle = .light
         
         naviFont()
         addButton.floatinBtn()
@@ -89,6 +90,10 @@ class ListViewController: UIViewController, UITableViewDelegate, UISearchBarDele
         token = NotificationCenter.default.addObserver(forName: EditorViewController.newListDidInsert, object: nil, queue: OperationQueue.main) {[weak self] (noti) in
             self?.tableView.reloadData()
         }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        boardCount.text = "총 \(DataManager.shared.boarList.count)개의 보드"
     }
 } // ================ viewDidLoad ================ //
 
