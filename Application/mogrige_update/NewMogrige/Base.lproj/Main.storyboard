@@ -435,7 +435,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="EKV-Tp-nZg">
-                                                        <rect key="frame" x="20" y="25" width="145" height="116"/>
+                                                        <rect key="frame" x="20" y="33" width="145" height="116"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="강아지" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.89999997615814209" translatesAutoresizingMaskIntoConstraints="NO" id="zdx-ab-GnG">
                                                                 <rect key="frame" x="0.0" y="0.0" width="145" height="28"/>
@@ -463,7 +463,7 @@
                                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.81999999284744263" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shadow" translatesAutoresizingMaskIntoConstraints="NO" id="geE-Nt-pzl">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.81999999284744263" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="newShadow_top" translatesAutoresizingMaskIntoConstraints="NO" id="geE-Nt-pzl">
                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="517.5"/>
                                                     </imageView>
                                                 </subviews>
@@ -473,7 +473,7 @@
                                                     <constraint firstItem="DKx-jx-UY1" firstAttribute="height" secondItem="P5J-jE-Aax" secondAttribute="height" multiplier="0.55" id="2sv-PR-iBw"/>
                                                     <constraint firstItem="EKV-Tp-nZg" firstAttribute="leading" secondItem="P5J-jE-Aax" secondAttribute="leading" constant="20" id="2tl-5Y-L1F"/>
                                                     <constraint firstItem="geE-Nt-pzl" firstAttribute="leading" secondItem="P5J-jE-Aax" secondAttribute="leading" id="3GV-Yn-MyY"/>
-                                                    <constraint firstItem="EKV-Tp-nZg" firstAttribute="top" secondItem="P5J-jE-Aax" secondAttribute="top" constant="25" id="7FT-5S-c5V"/>
+                                                    <constraint firstItem="EKV-Tp-nZg" firstAttribute="top" secondItem="P5J-jE-Aax" secondAttribute="top" constant="33" id="7FT-5S-c5V"/>
                                                     <constraint firstAttribute="trailing" secondItem="NUl-1z-HQb" secondAttribute="trailing" constant="20" symbolic="YES" id="7hf-Uc-IDR"/>
                                                     <constraint firstAttribute="trailing" secondItem="k4q-WA-6Tz" secondAttribute="trailing" constant="20" id="Dgg-iG-ocL"/>
                                                     <constraint firstAttribute="width" secondItem="P5J-jE-Aax" secondAttribute="height" multiplier="4:5" id="G9U-de-0QK"/>
@@ -575,7 +575,7 @@
                                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.81999999284744263" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shadow2" translatesAutoresizingMaskIntoConstraints="NO" id="oXq-uK-Vmy">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.81999999284744263" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="newShadow_bottom" translatesAutoresizingMaskIntoConstraints="NO" id="oXq-uK-Vmy">
                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="517.5"/>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="made by Mogrige" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aPJ-e4-8eh">
@@ -933,11 +933,11 @@
         <image name="description_bg2" width="236" height="325"/>
         <image name="img_button_icon" width="23" height="23"/>
         <image name="mo_tabicon_homeOn" width="23" height="23"/>
+        <image name="newShadow_bottom" width="1125" height="1367"/>
+        <image name="newShadow_top" width="1125" height="1369"/>
         <image name="paper_texture" width="750" height="891"/>
         <image name="pin" width="25" height="27"/>
         <image name="plus_bttn" width="56" height="56"/>
-        <image name="shadow" width="414" height="517.5"/>
-        <image name="shadow2" width="414" height="517.5"/>
         <image name="trash" catalog="system" width="121" height="128"/>
         <image name="wordTicket_blank" width="269" height="485"/>
         <systemColor name="systemBackgroundColor">

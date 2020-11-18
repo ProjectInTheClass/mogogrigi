@@ -210,10 +210,10 @@ class EditorViewController: UIViewController, UIImagePickerControllerDelegate, U
 extension EditorViewController: UITextViewDelegate {
     
     func textViewDidBeginEditing(_ textView: UITextView) {
-        if mainDescription.text == placeHolder[0] {
+        if textView == mainDescription {
             firstTextViewSetupView()
         }
-        if subDescription.text == placeHolder[1] {
+        if textView == subDescription {
             secondTextViewSetupView()
         }
     }
@@ -227,6 +227,8 @@ extension EditorViewController: UITextViewDelegate {
         }
     }
     
+    
+    //최대 글자수 제한
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         if text == "\n" {
             textView.resignFirstResponder()
