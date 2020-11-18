@@ -68,24 +68,24 @@ class EditorViewController: UIViewController, UIImagePickerControllerDelegate, U
         super.viewDidLoad()
         self.overrideUserInterfaceStyle = .light
         
-        //게시물 수정코드
-        if let board = editTarget {
-            navigationItem.title = "Edit a Board"
-            mainDescription.text = board.text1
-            subDescription.text = board.text2
-            mainTitle.text = "\(editTarget?.keyword1), \(editTarget?.keyword2), \(editTarget?.keyword3)"
-        }else {
-            navigationItem.title = "Create New Board"
-            mainDescription.text = "Place Holder"
-            subDescription.text = "Place Holder"
-            mainTitle.text = "\(selectedTitle[0]),\(selectedTitle[1]), \(selectedTitle[2])"
-        }
+//        //게시물 수정코드
+//        if let board = editTarget {
+//            navigationItem.title = "Edit a Board"
+//            mainDescription.text = board.text1
+//            subDescription.text = board.text2
+//            mainTitle.text = "\(editTarget?.keyword1), \(editTarget?.keyword2), \(editTarget?.keyword3)"
+//        }else {
+//            navigationItem.title = "Create New Board"
+//            mainDescription.text = "Place Holder"
+//            subDescription.text = "Place Holder"
+//            mainTitle.text = "\(selectedTitle[0]),\(selectedTitle[1]), \(selectedTitle[2])"
+//        }
         
         naviFont()
         photoGuide.textColor = UIColor(red: 180/255, green: 176/255, blue: 168/255, alpha: 1)
         
         // title Label에 랜덤키워드 띄우기
-        
+        mainTitle.text = "\(selectedTitle[0]),\(selectedTitle[1]), \(selectedTitle[2])"
         
         // textview placeholder 기본 설정
         mainDescription.delegate = self

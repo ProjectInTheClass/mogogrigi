@@ -74,6 +74,15 @@ class DataManager {
     
     
     
+    func deletBoard(_ board: Board?) {
+        if let board = board {
+            mainContext.delete(board)
+            saveContext()
+        }
+    }
+    
+    
+    
     // MARK: - Core Data stack
 
     lazy var persistentContainer: NSPersistentContainer = {

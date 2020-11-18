@@ -79,8 +79,23 @@ class DetailViewController: UIViewController, UIScrollViewDelegate {
         }
     }
     
+    // 보드 삭제 액션
+    @IBAction func delet(_ sender: Any) {
+        
+        let alert = UIAlertController(title: "삭제확인", message: "정말로 삭제할까요?", preferredStyle: .alert)
+        
+        let okAction = UIAlertAction(title: "삭제", style: .destructive) {[weak self] (action) in
+            DataManager.shared.deletBoard(self?.board)
+            self?.navigationController?.popViewController(animated: true)
+        }
+        alert.addAction(okAction)
+        
+        let cancelAction = UIAlertAction(title: "취소", style: .cancel, handler: nil)
+        alert.addAction(cancelAction)
+        
+        present(alert, animated: true, completion: nil)
+    }
     
-   
     
     override func viewDidLoad() {
         super.viewDidLoad()
