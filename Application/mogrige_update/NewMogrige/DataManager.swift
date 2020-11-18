@@ -36,7 +36,7 @@ class DataManager {
     
     
     
-    func addnewBoard(_ paraKeyword1: String?, _ paraKeyword2: String?, _ paraKeyword3: String?,  paraMainText: String?, paraSubText: String?, _ paraImages: [UIImage]){
+    func addnewBoard(_ paraKeyword1: String?, _ paraKeyword2: String?, _ paraKeyword3: String?,  paraMainText: String?, paraSubText: String?, _ paraImages: [UIImage], _ paraBookmark: Bool){
         
         let newBoard = Board(context: mainContext)
         
@@ -48,6 +48,8 @@ class DataManager {
         newBoard.text2 = paraSubText
         
         newBoard.date = Date()
+        
+        newBoard.bookmark = paraBookmark
         
         if paraImages.count == 1 {
             let data: [Data] = [(paraImages[0].pngData())!]
