@@ -12,6 +12,7 @@ extension UIViewController {
     
     func naviFont() {
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "NotoSerifCJKkr-Medium", size: 15) as Any]
+        navigationController?.navigationBar.overrideUserInterfaceStyle = .light
     }
     
     

@@ -54,6 +54,8 @@ class EditorViewController: UIViewController, UIImagePickerControllerDelegate, U
         
         performSegue(withIdentifier: "UnwindToHome", sender: self)
         
+        DataManager.shared.saveContext()
+        
     }
     
 
@@ -64,6 +66,7 @@ class EditorViewController: UIViewController, UIImagePickerControllerDelegate, U
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.overrideUserInterfaceStyle = .light
         
         //게시물 수정코드
         if let board = editTarget {
