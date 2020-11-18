@@ -1,6 +1,0 @@
-framework module Pods_mogrige_mogrigeUITests {
-  umbrella header "Pods-mogrige-mogrigeUITests-umbrella.h"
-
-  export *
-  module * { export * }
-}
