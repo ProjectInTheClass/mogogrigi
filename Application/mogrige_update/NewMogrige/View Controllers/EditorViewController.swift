@@ -212,7 +212,8 @@ extension EditorViewController: UITextViewDelegate {
     func textViewDidBeginEditing(_ textView: UITextView) {
         if mainDescription.text == placeHolder[0] {
             firstTextViewSetupView()
-        } else if subDescription.text == placeHolder[1] {
+        }
+        if subDescription.text == placeHolder[1] {
             secondTextViewSetupView()
         }
     }
@@ -220,7 +221,8 @@ extension EditorViewController: UITextViewDelegate {
     func textViewDidEndEditing(_ textView: UITextView) {
         if mainDescription.text == nil {
             firstTextViewSetupView()
-        } else if subDescription.text == nil {
+        }
+        if subDescription.text == nil {
             secondTextViewSetupView()
         }
     }
@@ -229,6 +231,11 @@ extension EditorViewController: UITextViewDelegate {
         if text == "\n" {
             textView.resignFirstResponder()
         }
+        var newText = textView.text!
+        newText.removeAll { (character) -> Bool in
+        return character == " " || character == "\n" }
+        if textView == mainDescription {return (newText.count + text.count) <= 50}
+        else if textView == subDescription{return (newText.count + text.count) <= 100}
         return true
     }
     
