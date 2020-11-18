@@ -31,6 +31,10 @@ class DetailViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var textFrame2: UILabel?
     @IBOutlet weak var textFrame3: UILabel?
     
+    @IBAction func cancel(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
 
     var frame = CGRect.zero
     
@@ -80,6 +84,9 @@ class DetailViewController: UIViewController, UIScrollViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.overrideUserInterfaceStyle = .light
+        
+        naviFont()
         
         first?.text = board?.keyword1
         second?.text = board?.keyword2
@@ -161,7 +168,7 @@ class DetailViewController: UIViewController, UIScrollViewDelegate {
         //frame5 백그라운드 컬러
         self.frame5.backgroundColor = UIColor.init(red: 241/255, green: 241/255, blue: 241/255, alpha: 1)
         
-  
+        
     }
     
     
