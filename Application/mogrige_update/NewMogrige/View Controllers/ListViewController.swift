@@ -70,9 +70,6 @@ class ListViewController: UIViewController, UITableViewDelegate, UISearchBarDele
         
     }
     
-
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.overrideUserInterfaceStyle = .light
