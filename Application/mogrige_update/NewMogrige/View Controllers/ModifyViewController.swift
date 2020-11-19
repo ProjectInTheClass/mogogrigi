@@ -59,7 +59,7 @@ class ModifyViewController: UIViewController, UITextViewDelegate {
                     DataManager.shared.addnewBoard(prepareTitle[0], prepareTitle[1], prepareTitle[2], paraMainText: mainDescription.text, paraSubText: subDescription.text, legacyImg, false)
                     NotificationCenter.default.post(name: EditorViewController.newListDidInsert, object: nil)
                     performSegue(withIdentifier: "UnwindToHome", sender: self)
-                    DataManager.shared.saveContext()
+                    //DataManager.shared.saveContext()
                 }
         
     }
@@ -102,10 +102,10 @@ class ModifyViewController: UIViewController, UITextViewDelegate {
         
         
         let legacyImgSource1: UIImage = UIImage(data: (editTarget?.images![0])!)!
-        let legacyImgSource2: UIImage = UIImage(data: (editTarget?.images![0])!)!
-        let legacyImgSource3: UIImage = UIImage(data: (editTarget?.images![0])!)!
-        let legacyImgSource4: UIImage = UIImage(data: (editTarget?.images![0])!)!
-        let legacyImgSource5: UIImage = UIImage(data: (editTarget?.images![0])!)!
+        let legacyImgSource2: UIImage = UIImage(data: (editTarget?.images![1])!)!
+        let legacyImgSource3: UIImage = UIImage(data: (editTarget?.images![2])!)!
+        let legacyImgSource4: UIImage = UIImage(data: (editTarget?.images![3])!)!
+        let legacyImgSource5: UIImage = UIImage(data: (editTarget?.images![4])!)!
         legacyImg = [legacyImgSource1, legacyImgSource2, legacyImgSource3, legacyImgSource4, legacyImgSource5]
                 
         imgPickButton.imgPickBtn()

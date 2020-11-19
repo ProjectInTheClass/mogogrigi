@@ -135,10 +135,10 @@
 				F583072D25614CFA00F0D413 /* DetailViewController.swift */,
 				AAC0053C2562A7B100484F7A /* ListViewController.swift */,
 				07F3002D25621E7B00C57387 /* ListViewTableViewCell.swift */,
+				07746CC22565DBA4006DA73D /* ModifyViewController.swift */,
 				AA4328B12562BBEA00AB3A61 /* NaviFontExtension.swift */,
 				AAC005332562A3D700484F7A /* UIButtonExtension.swift */,
 				AA94C88125650F1E006C723A /* TextSizeExtension.swift */,
-				07746CC22565DBA4006DA73D /* ModifyViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
