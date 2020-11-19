@@ -61,12 +61,13 @@ class ListViewController: UIViewController, UITableViewDelegate, UISearchBarDele
         super.viewWillAppear(animated)
         
         DataManager.shared.fetchBoard()
-        
+                
         if DataManager.shared.boarList.count == 0 {
             DataManager.shared.addnewBoard("고양이", "저녁노을", "흔들의자", paraMainText: "#고양이는 #저녁노을 지는 창가앞 #흔들의자에 몸을 둥글게 말고 잠들었다.", paraSubText: "전체적으로 브라운과 오렌지의 노을 빛을 배색하고 나무질감의 흔들의자와 담요를 적절히 자리를 잡아 그린다. 고양이는 실루엣으로만 표현하고 전체적으로 대비를 강하게 한다.", dummyData, false)
             
             NotificationCenter.default.post(name: EditorViewController.newListDidInsert, object: nil)
         }
+        /*
         for item in DataManager.shared.boarList {
             var keywordStr = ""
             if let keyword1 = item.keyword1 {
@@ -84,6 +85,9 @@ class ListViewController: UIViewController, UITableViewDelegate, UISearchBarDele
         }
         filteredData = keywordsData
         print(keywordsData)
+        */
+        self.tableView.reloadData()
+        
     }
     
     override func viewDidLoad() {
@@ -107,23 +111,29 @@ class ListViewController: UIViewController, UITableViewDelegate, UISearchBarDele
     
     override func viewDidAppear(_ animated: Bool) {
         boardCount.text = "총 \(DataManager.shared.boarList.count)개의 보드"
-        self.tableView.reloadData()
     }
 }
 
 extension ListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return filteredData.count
+        return DataManager.shared.boarList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ListViewTableViewCell
         
+        let target = DataManager.shared.boarList[indexPath.row]
+        cell.keywordTitle?.text = "\((target.keyword1!)), \((target.keyword2!)), \((target.keyword3!))"
+        cell.dateLabel?.text = formatter.string(for: target.date)
+        cell.objectId = target.objectID
+        cell.configure()
+        /*
         let postListCell = filteredData[indexPath.row]
         cell.keywordTitle?.text = postListCell["keywords"] as? String
         cell.dateLabel.text = (postListCell["Date"] as? String) ?? ""
         cell.objectId = (postListCell["id"] as! NSManagedObjectID)
         cell.configure()
+        */
         
         return cell
         
@@ -141,6 +151,7 @@ extension ListViewController: UITableViewDataSource {
             self.searchBar.resignFirstResponder()
         }
     
+    /*
     // 테이블 뷰 삭제
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCell.EditingStyle.delete {
@@ -149,9 +160,9 @@ extension ListViewController: UITableViewDataSource {
             
             boardCount.text = "총\(DataManager.shared.boarList.count)개의 보드"
         }
-        
     }
-    
+    */
+    /*
     //searchbar config
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
@@ -166,5 +177,6 @@ extension ListViewController: UITableViewDataSource {
         }
         self.tableView.reloadData()
     }
+    */
     
 }

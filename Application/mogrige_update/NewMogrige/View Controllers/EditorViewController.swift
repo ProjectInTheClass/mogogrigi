@@ -58,7 +58,7 @@ class EditorViewController: UIViewController, UIImagePickerControllerDelegate, U
                     DataManager.shared.addnewBoard(selectedTitle[0], selectedTitle[1], selectedTitle[2], paraMainText: mainDescription.text, paraSubText: subDescription.text, selectedImg, false)
                     NotificationCenter.default.post(name: EditorViewController.newListDidInsert, object: nil)
                     performSegue(withIdentifier: "UnwindToHome", sender: self)
-                    DataManager.shared.saveContext()
+                    //DataManager.shared.saveContext()
                 }
         
     }
