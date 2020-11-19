@@ -22,7 +22,8 @@ class ListViewController: UIViewController, UITableViewDelegate, UISearchBarDele
     }
     
     var dummyData: [UIImage] = [UIImage(named: "dummy1")!, UIImage(named: "dummy2")!, UIImage(named: "dummy3")!, UIImage(named: "dummy4")!, UIImage(named: "dummy5")!]
-    
+    var filteredData: [String?] = []
+    var keywordsData: [String?] = []
 
     let formatter: DateFormatter = {
         let f = DateFormatter()
@@ -70,6 +71,8 @@ class ListViewController: UIViewController, UITableViewDelegate, UISearchBarDele
         
     }
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.overrideUserInterfaceStyle = .light
@@ -82,15 +85,24 @@ class ListViewController: UIViewController, UITableViewDelegate, UISearchBarDele
         let emptyImg = UIImage()
         searchBar.backgroundImage = emptyImg
         searchBar.backgroundColor = UIColor.clear
-
+        
         
         token = NotificationCenter.default.addObserver(forName: EditorViewController.newListDidInsert, object: nil, queue: OperationQueue.main) {[weak self] (noti) in
             self?.tableView.reloadData()
         }
+        
+        for item in DataManager.shared.boarList {
+            keywordsData.append("\(item.keyword1!), \(item.keyword2!), \(item.keyword3!)")
+            print("여기는 포문")
+        }
+        filteredData = keywordsData
+        print(keywordsData)
     }
     
     override func viewDidAppear(_ animated: Bool) {
         boardCount.text = "총 \(DataManager.shared.boarList.count)개의 보드"
+        
+        
     }
 } // ================ viewDidLoad ================ //
 
@@ -105,9 +117,11 @@ extension ListViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ListViewTableViewCell
         
         let target = DataManager.shared.boarList[indexPath.row]
-        cell.keywordTitle?.text = "\(target.keyword1!), \(target.keyword2!), \(target.keyword3!)"
+        //cell.keywordTitle?.text = "\(target.keyword1!), \(target.keyword2!), \(target.keyword3!)"
         cell.dateLabel.text = formatter.string(for: target.date)
         
+        let postListCell = filteredData[indexPath.row]
+        cell.keywordTitle?.text = postListCell
         cell.configure()
         
         return cell
@@ -125,6 +139,38 @@ extension ListViewController: UITableViewDataSource {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
             self.searchBar.resignFirstResponder()
         }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == UITableViewCell.EditingStyle.delete {
+            DataManager.shared.boarList.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
+            
+            boardCount.text = "총\(DataManager.shared.boarList.count)개의 보드"
+        }
+        
+    }
+    
+    //searchbar config
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        filteredData = []
+        
+        if searchText == "" {
+            filteredData = keywordsData
+        } else {
+            for keyword in keywordsData {
+
+                if keyword!.lowercased().contains(searchText.lowercased()) {
+                    filteredData.append(keyword)
+                }
+            }
+        }
+        self.tableView.reloadData()
+        
+        let searchBar = UISearchBar()
+                searchBar.placeholder = "Search"
+        self.navigationController?.navigationBar.topItem?.titleView = searchBar
+    }
     
     
 }
