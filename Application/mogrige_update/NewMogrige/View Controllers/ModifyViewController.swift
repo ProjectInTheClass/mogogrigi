@@ -14,6 +14,7 @@ class ModifyViewController: UIViewController, UITextViewDelegate {
     var editTarget: Board?
     var selectedImg: [UIImage] = []
     var prepareTitle: [String] = []
+    var legacyImg:[UIImage] = []
     
     let imagePicker: UIImagePickerController! = UIImagePickerController()
     
@@ -47,7 +48,7 @@ class ModifyViewController: UIViewController, UITextViewDelegate {
         
         prepareTitle = [((editTarget?.keyword1)!), ((editTarget?.keyword2)!), ((editTarget?.keyword3)!)]
         
-        if selectedImg.count < 5 {
+        if legacyImg.count < 5{
                     let photoAlert = UIAlertController(title: "", message: "반드시 5장의 사진을 선택해주세요.", preferredStyle: UIAlertController.Style.alert)
                     photoAlert.addAction(UIAlertAction(title: "계속하기", style: UIAlertAction.Style.default, handler: nil))
                     
@@ -55,7 +56,7 @@ class ModifyViewController: UIViewController, UITextViewDelegate {
                 } else {
                     //코어데이터 전달
                     DataManager.shared.deletBoard(self.editTarget)
-                    DataManager.shared.addnewBoard(prepareTitle[0], prepareTitle[1], prepareTitle[2], paraMainText: mainDescription.text, paraSubText: subDescription.text, selectedImg, false)
+                    DataManager.shared.addnewBoard(prepareTitle[0], prepareTitle[1], prepareTitle[2], paraMainText: mainDescription.text, paraSubText: subDescription.text, legacyImg, false)
                     NotificationCenter.default.post(name: EditorViewController.newListDidInsert, object: nil)
                     performSegue(withIdentifier: "UnwindToHome", sender: self)
                     DataManager.shared.saveContext()
@@ -98,8 +99,15 @@ class ModifyViewController: UIViewController, UITextViewDelegate {
         subDesBack.layer.shadowOffset = CGSize(width: 0, height: 2)
         subDesBack.layer.shadowRadius = 2.5
         subDesBack.layer.shadowOpacity = 0.1
-         
         
+        
+        let legacyImgSource1: UIImage = UIImage(data: (editTarget?.images![0])!)!
+        let legacyImgSource2: UIImage = UIImage(data: (editTarget?.images![0])!)!
+        let legacyImgSource3: UIImage = UIImage(data: (editTarget?.images![0])!)!
+        let legacyImgSource4: UIImage = UIImage(data: (editTarget?.images![0])!)!
+        let legacyImgSource5: UIImage = UIImage(data: (editTarget?.images![0])!)!
+        legacyImg = [legacyImgSource1, legacyImgSource2, legacyImgSource3, legacyImgSource4, legacyImgSource5]
+                
         imgPickButton.imgPickBtn()
         
         self.hideKeyboard()
@@ -146,7 +154,7 @@ class ModifyViewController: UIViewController, UITextViewDelegate {
                     print("")
                 }
             }
-
+            legacyImg = selectedImg
             picker.dismiss(animated: true) {
                 }
             }
