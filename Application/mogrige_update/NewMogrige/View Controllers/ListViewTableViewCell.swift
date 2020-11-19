@@ -14,6 +14,16 @@ class ListViewTableViewCell: UITableViewCell {
     //let cellView: UIView
     var editTarget : Board?
     var buttonIsSelected = false
+    var objectId: NSManagedObjectID! {
+        didSet {
+            editTarget = DataManager.shared.mainContext.object(with: objectId) as! Board
+            if editTarget?.bookmark == false {
+                bookmarkBtn.setImage(UIImage(systemName: "bookmark"), for: .normal)
+            } else {
+                bookmarkBtn.setImage(UIImage(systemName: "bookmark.fill"), for: .normal)
+            }
+        }
+    }
     
     @IBOutlet weak var keywordTitle: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
@@ -28,11 +38,6 @@ class ListViewTableViewCell: UITableViewCell {
     
     
     @IBAction func clickedBookmark(_ sender: Any) {
-        
-        //https://www.youtube.com/watch?v=ZfuC1Ntasys&list=PLziSvys01OemZoYotSrwUVx_CbZUF7v17&index=20
-        //https://stackoverflow.com/questions/49225531/create-a-favorite-button-that-connects-to-a-favorite-tableview-in-swift
-        //위 주소들 방법 총동원해서 해볼 수 있지 않을까요
-        
         
         buttonIsSelected = !buttonIsSelected
         if buttonIsSelected == true {
@@ -52,20 +57,14 @@ class ListViewTableViewCell: UITableViewCell {
         if bool == true {
             print("favorite")
             print("buttonIsSelected \(buttonIsSelected)")
-            let liked = Board(context: NewMogrige.DataManager.shared.mainContext)
-            liked.bookmark = bool
-            DataManager.shared.saveContext()
-           
+
         } else if bool == false {
             print("unfavorite")
             print("buttonIsSelected \(buttonIsSelected)")
-            let liked = Board(context: DataManager.shared.mainContext)
-            liked.bookmark = bool
-            DataManager.shared.deletBoard(self.editTarget)
-            
-            DataManager.shared.saveContext()
-            
         }
+        let liked = DataManager.shared.mainContext.object(with: objectId) as! Board
+        liked.bookmark = bool
+        DataManager.shared.saveContext()
         
     }
 //    clears core data so it doens't get full

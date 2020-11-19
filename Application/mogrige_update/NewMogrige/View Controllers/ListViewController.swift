@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 class ListViewController: UIViewController, UITableViewDelegate, UISearchBarDelegate {
 
@@ -22,8 +23,8 @@ class ListViewController: UIViewController, UITableViewDelegate, UISearchBarDele
     }
     
     var dummyData: [UIImage] = [UIImage(named: "dummy1")!, UIImage(named: "dummy2")!, UIImage(named: "dummy3")!, UIImage(named: "dummy4")!, UIImage(named: "dummy5")!]
-    var filteredData: [[String: String]] = []
-    var keywordsData: [[String: String]] = []
+    var filteredData: [[String: Any]] = []
+    var keywordsData: [[String: Any]] = []
 
     let formatter: DateFormatter = {
         let f = DateFormatter()
@@ -59,7 +60,6 @@ class ListViewController: UIViewController, UITableViewDelegate, UISearchBarDele
         super.viewWillAppear(animated)
         
         DataManager.shared.fetchBoard()
-        tableView.reloadData()
         
         if DataManager.shared.boarList.count == 0 {
             DataManager.shared.addnewBoard("고양이", "저녁노을", "흔들의자", paraMainText: "#고양이는 #저녁노을 지는 창가앞 #흔들의자에 몸을 둥글게 말고 잠들었다.", paraSubText: "전체적으로 브라운과 오렌지의 노을 빛을 배색하고 나무질감의 흔들의자와 담요를 적절히 자리를 잡아 그린다. 고양이는 실루엣으로만 표현하고 전체적으로 대비를 강하게 한다.", dummyData, false)
@@ -70,19 +70,22 @@ class ListViewController: UIViewController, UITableViewDelegate, UISearchBarDele
             var keywordStr = ""
             if let keyword1 = item.keyword1 {
                 keywordStr.append(keyword1)
+                keywordStr.append(", ")
             }
             if let keyword2 = item.keyword2 {
                 keywordStr.append(keyword2)
+                keywordStr.append(", ")
             }
             if let keyword3 = item.keyword3 {
                 keywordStr.append(keyword3)
             }
-            keywordsData.append(["keywords": keywordStr, "Date": formatter.string(for: item.date) ?? ""])
-            print("여기는 포문")
-            
+            keywordsData.append(["keywords": keywordStr, "Date": formatter.string(for: item.date) ?? "", "id": item.objectID])
+
         }
         filteredData = keywordsData
         print(keywordsData)
+        
+//        tableView.reloadData()
     }
     
     
@@ -105,12 +108,11 @@ class ListViewController: UIViewController, UITableViewDelegate, UISearchBarDele
             self?.tableView.reloadData()
         }
         self.searchBar.delegate = self
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
         boardCount.text = "총 \(DataManager.shared.boarList.count)개의 보드"
-        
-        
     }
 } // ================ viewDidLoad ================ //
 
@@ -130,8 +132,9 @@ extension ListViewController: UITableViewDataSource {
 //        cell.dateLabel.text = formatter.string(for: postListCell.date)
         
         
-        cell.keywordTitle?.text = postListCell["keywords"]
-        cell.dateLabel.text = postListCell["date"]
+        cell.keywordTitle?.text = postListCell["keywords"] as? String
+        cell.dateLabel.text = (postListCell["date"] as? String) ?? ""
+        cell.objectId = postListCell["id"] as! NSManagedObjectID
         cell.configure()
         
         return cell
@@ -169,7 +172,7 @@ extension ListViewController: UITableViewDataSource {
             filteredData = keywordsData
         } else {
             filteredData = keywordsData.filter { (item) -> Bool in
-                return (item["keywords"]?.lowercased().contains(searchText.lowercased()))!
+                return ((item["keywords"] as! String).lowercased().contains(searchText.lowercased()))
             }
         }
         self.tableView.reloadData()
