@@ -158,6 +158,8 @@ class EditorViewController: UIViewController, UIImagePickerControllerDelegate, U
     @IBAction func buttonDidTap(_ sender: UIButton) {
         var config = YPImagePickerConfiguration()
         config.library.maxNumberOfItems = 5
+        config.screens = [.library]
+        config.showsCrop = .rectangle(ratio: 1)
 
         let picker = YPImagePicker(configuration: config)
         picker.didFinishPicking { [self, unowned picker] items, cancelled in
