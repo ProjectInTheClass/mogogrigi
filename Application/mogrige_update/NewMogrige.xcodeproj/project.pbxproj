@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		07746CC32565DBA4006DA73D /* ModifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07746CC22565DBA4006DA73D /* ModifyViewController.swift */; };
 		07F3002E25621E7B00C57387 /* ListViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F3002D25621E7B00C57387 /* ListViewTableViewCell.swift */; };
 		AA4328B22562BBEA00AB3A61 /* NaviFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4328B12562BBEA00AB3A61 /* NaviFontExtension.swift */; };
 		AA5224F125619096000C27F9 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5224F025619096000C27F9 /* Model.swift */; };
@@ -31,6 +32,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		07746CC22565DBA4006DA73D /* ModifyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyViewController.swift; sourceTree = "<group>"; };
 		07F3002D25621E7B00C57387 /* ListViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewTableViewCell.swift; sourceTree = "<group>"; };
 		68A5D3BB1A672D868636C45D /* Pods-NewMogrige.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewMogrige.release.xcconfig"; path = "Target Support Files/Pods-NewMogrige/Pods-NewMogrige.release.xcconfig"; sourceTree = "<group>"; };
 		AA4328B12562BBEA00AB3A61 /* NaviFontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaviFontExtension.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 				AA4328B12562BBEA00AB3A61 /* NaviFontExtension.swift */,
 				AAC005332562A3D700484F7A /* UIButtonExtension.swift */,
 				AA94C88125650F1E006C723A /* TextSizeExtension.swift */,
+				07746CC22565DBA4006DA73D /* ModifyViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -281,6 +284,7 @@
 				F583072525614BFF00F0D413 /* EditorViewController.swift in Sources */,
 				AA5224F125619096000C27F9 /* Model.swift in Sources */,
 				F583072225614BCA00F0D413 /* HomeViewController.swift in Sources */,
+				07746CC32565DBA4006DA73D /* ModifyViewController.swift in Sources */,
 				AAC005342562A3D700484F7A /* UIButtonExtension.swift in Sources */,
 				F583073425614DE300F0D413 /* DataManager.swift in Sources */,
 				AA4328B22562BBEA00AB3A61 /* NaviFontExtension.swift in Sources */,
