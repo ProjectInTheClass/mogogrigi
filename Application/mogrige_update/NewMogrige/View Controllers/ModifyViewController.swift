@@ -45,7 +45,7 @@ class ModifyViewController: UIViewController, UITextViewDelegate {
     
     @IBAction func save(_ sender: Any) {
         
-        prepareTitle = [((editTarget?.keyword1)!), ((editTarget?.keyword3)!), ((editTarget?.keyword3)!)]
+        prepareTitle = [((editTarget?.keyword1)!), ((editTarget?.keyword2)!), ((editTarget?.keyword3)!)]
         
         if selectedImg.count < 5 {
                     let photoAlert = UIAlertController(title: "", message: "반드시 5장의 사진을 선택해주세요.", preferredStyle: UIAlertController.Style.alert)
