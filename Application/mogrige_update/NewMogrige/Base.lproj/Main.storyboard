@@ -699,6 +699,7 @@
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
+                        <outlet property="boardDate" destination="yZs-X1-tXw" id="TV7-rE-rgO"/>
                         <outlet property="first" destination="zdx-ab-GnG" id="6Pd-Cs-9pt"/>
                         <outlet property="frame1" destination="DKx-jx-UY1" id="MCa-XT-bkA"/>
                         <outlet property="frame2" destination="bTg-NG-1RY" id="HaB-vH-vFp"/>

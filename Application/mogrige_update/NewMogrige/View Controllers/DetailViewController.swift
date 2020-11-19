@@ -27,6 +27,7 @@ class DetailViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var second: UILabel?
     @IBOutlet weak var third: UILabel?
     
+    @IBOutlet weak var boardDate: UILabel?
     
     @IBOutlet weak var textFrame2: UILabel!
     @IBOutlet weak var textFrame3: UILabel!
@@ -40,6 +41,13 @@ class DetailViewController: UIViewController, UIScrollViewDelegate {
     
     var board: Board?
     
+    let formatter: DateFormatter = {
+        let f = DateFormatter()
+        f.dateStyle = .long
+        f.timeStyle = .none
+        f.locale = Locale(identifier: "Ko_kr")
+        return f
+    }()
     
     let paragraphStyle = NSMutableParagraphStyle()
     func textFrame2Style() {
@@ -110,6 +118,9 @@ class DetailViewController: UIViewController, UIScrollViewDelegate {
         first?.text = board?.keyword1
         second?.text = board?.keyword2
         third?.text = board?.keyword3
+        
+        boardDate?.text = formatter.string(for: board?.date)
+        
         
         if board?.images?.count == 1 {
             moodboardImg1.image = UIImage(data: (board?.images![0])!)
