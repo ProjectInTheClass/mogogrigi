@@ -684,16 +684,16 @@
                             </connections>
                         </barButtonItem>
                         <rightBarButtonItems>
-                            <barButtonItem title="Edit" image="trash" catalog="system" id="Fxw-Y5-5qX">
-                                <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <connections>
-                                    <action selector="delet:" destination="DVA-3B-gw6" id="74a-0Q-PrZ"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem title="edit" id="ND3-D8-w33">
+                            <barButtonItem image="pencil.circle" catalog="system" id="ND3-D8-w33">
                                 <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <segue destination="pED-jk-JOo" kind="presentation" id="ZHn-s9-Jve"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem image="trash.circle" catalog="system" id="Fxw-Y5-5qX">
+                                <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="delet:" destination="DVA-3B-gw6" id="74a-0Q-PrZ"/>
                                 </connections>
                             </barButtonItem>
                         </rightBarButtonItems>
@@ -734,7 +734,7 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background_grain_big" translatesAutoresizingMaskIntoConstraints="NO" id="Qh8-r6-vvr">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
-                            <searchBar clipsSubviews="YES" contentMode="redraw" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jAf-I9-H2H">
+                            <searchBar clipsSubviews="YES" contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="jAf-I9-H2H">
                                 <rect key="frame" x="0.0" y="98" width="414" height="56"/>
                                 <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="search"/>
@@ -1151,9 +1151,10 @@
         <image name="newShadow_bottom" width="1125" height="1367"/>
         <image name="newShadow_top" width="1125" height="1369"/>
         <image name="paper_texture" width="750" height="891"/>
+        <image name="pencil.circle" catalog="system" width="128" height="121"/>
         <image name="pin" width="25" height="27"/>
         <image name="plus_bttn" width="56" height="56"/>
-        <image name="trash" catalog="system" width="121" height="128"/>
+        <image name="trash.circle" catalog="system" width="128" height="121"/>
         <image name="wordTicket_blank" width="269" height="485"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
