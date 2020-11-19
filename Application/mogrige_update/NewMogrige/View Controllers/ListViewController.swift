@@ -25,6 +25,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UISearchBarDele
     var dummyData: [UIImage] = [UIImage(named: "dummy1")!, UIImage(named: "dummy2")!, UIImage(named: "dummy3")!, UIImage(named: "dummy4")!, UIImage(named: "dummy5")!]
     var filteredData: [[String: Any]] = []
     var keywordsData: [[String: Any]] = []
+    var listTarget = Board?.self
 
     let formatter: DateFormatter = {
         let f = DateFormatter()
@@ -66,7 +67,10 @@ class ListViewController: UIViewController, UITableViewDelegate, UISearchBarDele
             
             NotificationCenter.default.post(name: EditorViewController.newListDidInsert, object: nil)
         }
+
+        keywordsData = []
         for item in DataManager.shared.boarList {
+            
             var keywordStr = ""
             if let keyword1 = item.keyword1 {
                 keywordStr.append(keyword1)
@@ -80,12 +84,10 @@ class ListViewController: UIViewController, UITableViewDelegate, UISearchBarDele
                 keywordStr.append(keyword3)
             }
             keywordsData.append(["keywords": keywordStr, "Date": formatter.string(for: item.date) ?? "", "id": item.objectID])
-
         }
         filteredData = keywordsData
-        print(keywordsData)
         
-//        tableView.reloadData()
+        tableView.reloadData()
     }
     
     
@@ -99,15 +101,16 @@ class ListViewController: UIViewController, UITableViewDelegate, UISearchBarDele
         filterButton.filterBtn()
         tableView.backgroundColor = UIColor.clear
         
+        searchBar.delegate = self
+        
         let emptyImg = UIImage()
         searchBar.backgroundImage = emptyImg
         searchBar.backgroundColor = UIColor.clear
         
         
-        token = NotificationCenter.default.addObserver(forName: EditorViewController.newListDidInsert, object: nil, queue: OperationQueue.main) {[weak self] (noti) in
-            self?.tableView.reloadData()
-        }
-        self.searchBar.delegate = self
+//        token = NotificationCenter.default.addObserver(forName: EditorViewController.newListDidInsert, object: nil, queue: OperationQueue.main) {[weak self] (noti) in
+//            self?.tableView.reloadData()
+//        }
         
     }
     
@@ -131,10 +134,9 @@ extension ListViewController: UITableViewDataSource {
         //cell.keywordTitle?.text = "\(target.keyword1!), \(target.keyword2!), \(target.keyword3!)"
 //        cell.dateLabel.text = formatter.string(for: postListCell.date)
         
-        
         cell.keywordTitle?.text = postListCell["keywords"] as? String
         cell.dateLabel.text = (postListCell["Date"] as? String) ?? ""
-        cell.objectId = postListCell["id"] as! NSManagedObjectID
+        cell.objectId = postListCell["id"] as? NSManagedObjectID
         cell.configure()
         
         return cell
@@ -153,15 +155,25 @@ extension ListViewController: UITableViewDataSource {
             self.searchBar.resignFirstResponder()
         }
     
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+    internal func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCell.EditingStyle.delete {
             DataManager.shared.boarList.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
             
             boardCount.text = "총\(DataManager.shared.boarList.count)개의 보드"
         }
-        
     }
+    
+    //tableView 스와이프해서 삭제하기
+//    private func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+//        if editingStyle == UITableViewCell.EditingStyle.delete {
+//            filteredData.remove(at: indexPath.row)
+//            tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
+//            DataManager.shared.deletBoard(listTarget)
+//
+//            boardCount.text = "총\(filteredData)개의 보드"
+//        }
+//    }
     
     //searchbar config
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
@@ -175,8 +187,7 @@ extension ListViewController: UITableViewDataSource {
                 return ((item["keywords"] as! String).lowercased().contains(searchText.lowercased()))
             }
         }
+        boardCount.text = "총\(filteredData.count)개의 보드"
         self.tableView.reloadData()
     }
-    
-    
 }
