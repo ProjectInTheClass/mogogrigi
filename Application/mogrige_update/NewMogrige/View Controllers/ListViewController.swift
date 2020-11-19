@@ -133,7 +133,7 @@ extension ListViewController: UITableViewDataSource {
         
         
         cell.keywordTitle?.text = postListCell["keywords"] as? String
-        cell.dateLabel.text = (postListCell["date"] as? String) ?? ""
+        cell.dateLabel.text = (postListCell["Date"] as? String) ?? ""
         cell.objectId = postListCell["id"] as! NSManagedObjectID
         cell.configure()
         
