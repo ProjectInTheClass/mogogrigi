@@ -43,7 +43,7 @@ class DetailViewController: UIViewController, UIScrollViewDelegate {
     
     let formatter: DateFormatter = {
         let f = DateFormatter()
-        f.dateStyle = .long
+        f.dateStyle = .full
         f.timeStyle = .none
         f.locale = Locale(identifier: "Ko_kr")
         return f
