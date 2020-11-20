@@ -58,7 +58,7 @@ class EditorViewController: UIViewController, UIImagePickerControllerDelegate, U
                     DataManager.shared.addnewBoard(selectedTitle[0], selectedTitle[1], selectedTitle[2], paraMainText: mainDescription.text, paraSubText: subDescription.text, selectedImg, false)
                     NotificationCenter.default.post(name: EditorViewController.newListDidInsert, object: nil)
                     performSegue(withIdentifier: "UnwindToHome", sender: self)
-                    DataManager.shared.saveContext()
+                    //DataManager.shared.saveContext()
                 }
         
     }
@@ -84,7 +84,7 @@ class EditorViewController: UIViewController, UIImagePickerControllerDelegate, U
         photoGuide.textColor = UIColor(red: 180/255, green: 176/255, blue: 168/255, alpha: 1)
         
         // title Label에 랜덤키워드 띄우기
-        mainTitle.text = "\(selectedTitle[0]),\(selectedTitle[1]), \(selectedTitle[2])"
+        mainTitle.text = "\(selectedTitle[0]), \(selectedTitle[1]), \(selectedTitle[2])"
         
         // textview placeholder 기본 설정
         mainDescription.delegate = self

@@ -13,7 +13,6 @@ class ListViewController: UIViewController, UITableViewDelegate, UISearchBarDele
     
     @IBOutlet weak var addButton: UIButton!
     
-    @IBOutlet weak var filterButton: UIButton!
     @IBOutlet weak var boardCount: UILabel!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
@@ -61,12 +60,14 @@ class ListViewController: UIViewController, UITableViewDelegate, UISearchBarDele
         super.viewWillAppear(animated)
         
         DataManager.shared.fetchBoard()
-        
+                
         if DataManager.shared.boarList.count == 0 {
             DataManager.shared.addnewBoard("고양이", "저녁노을", "흔들의자", paraMainText: "#고양이는 #저녁노을 지는 창가앞 #흔들의자에 몸을 둥글게 말고 잠들었다.", paraSubText: "전체적으로 브라운과 오렌지의 노을 빛을 배색하고 나무질감의 흔들의자와 담요를 적절히 자리를 잡아 그린다. 고양이는 실루엣으로만 표현하고 전체적으로 대비를 강하게 한다.", dummyData, false)
             
             NotificationCenter.default.post(name: EditorViewController.newListDidInsert, object: nil)
         }
+        
+        keywordsData = []
         for item in DataManager.shared.boarList {
             var keywordStr = ""
             if let keyword1 = item.keyword1 {
@@ -80,10 +81,12 @@ class ListViewController: UIViewController, UITableViewDelegate, UISearchBarDele
             if let keyword3 = item.keyword3 {
                 keywordStr.append(keyword3)
             }
-            keywordsData.append(["keywords": keywordStr, "Date": formatter.string(for: item.date) ?? "", "id": item.objectID])
+            keywordsData.append(["keywords": keywordStr, "Date": formatter.string(for: item.date) ?? "", "id": item.objectID, "bookmark": item.bookmark])
         }
         filteredData = keywordsData
-        print(keywordsData)
+        
+        self.tableView.reloadData()
+        
     }
     
     override func viewDidLoad() {
@@ -92,7 +95,6 @@ class ListViewController: UIViewController, UITableViewDelegate, UISearchBarDele
         
         naviFont()
         addButton.floatinBtn()
-        filterButton.filterBtn()
         tableView.backgroundColor = UIColor.clear
         
         let emptyImg = UIImage()
@@ -103,10 +105,29 @@ class ListViewController: UIViewController, UITableViewDelegate, UISearchBarDele
         token = NotificationCenter.default.addObserver(forName: EditorViewController.newListDidInsert, object: nil, queue: OperationQueue.main) {[weak self] (noti) in
             self?.tableView.reloadData()
         }
+        self.searchBar.delegate = self
     }
     
     override func viewDidAppear(_ animated: Bool) {
         boardCount.text = "총 \(DataManager.shared.boarList.count)개의 보드"
+    }
+    
+    //북마크 정렬
+    @IBAction func didChangeSegment(_ sender: UISegmentedControl) {
+        filteredData = []
+        
+        if sender.selectedSegmentIndex == 0 {
+            for item in DataManager.shared.boarList {
+                filteredData.append(["date": item.date, "keywords": "\(item.keyword2), \(item.keyword3)","id": item.id, "bookmarked": item.bookmark])
+            }
+        } else if sender.selectedSegmentIndex == 1 {
+            
+            filteredData = DataManager.shared.boarList.filter { (item) -> Bool in
+                    return (item["bookmark"] != nil) == true
+            }
+            print(filteredData)
+        }
+        
         self.tableView.reloadData()
     }
 }
@@ -118,12 +139,19 @@ extension ListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ListViewTableViewCell
-        
+        /*
+        let target = DataManager.shared.boarList[indexPath.row]
+        cell.keywordTitle?.text = "\((target.keyword1!)), \((target.keyword2!)), \((target.keyword3!))"
+        cell.dateLabel?.text = formatter.string(for: target.date)
+        cell.objectId = target.objectID
+        cell.configure()
+        */
         let postListCell = filteredData[indexPath.row]
         cell.keywordTitle?.text = postListCell["keywords"] as? String
         cell.dateLabel.text = (postListCell["Date"] as? String) ?? ""
         cell.objectId = (postListCell["id"] as! NSManagedObjectID)
         cell.configure()
+        
         
         return cell
         
@@ -141,6 +169,7 @@ extension ListViewController: UITableViewDataSource {
             self.searchBar.resignFirstResponder()
         }
     
+    /*
     // 테이블 뷰 삭제
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCell.EditingStyle.delete {
@@ -149,8 +178,8 @@ extension ListViewController: UITableViewDataSource {
             
             boardCount.text = "총\(DataManager.shared.boarList.count)개의 보드"
         }
-        
     }
+    */
     
     //searchbar config
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
@@ -166,5 +195,6 @@ extension ListViewController: UITableViewDataSource {
         }
         self.tableView.reloadData()
     }
+    
     
 }
