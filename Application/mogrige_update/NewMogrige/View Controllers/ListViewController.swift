@@ -13,7 +13,6 @@ class ListViewController: UIViewController, UITableViewDelegate, UISearchBarDele
     
     @IBOutlet weak var addButton: UIButton!
     
-    @IBOutlet weak var filterButton: UIButton!
     @IBOutlet weak var boardCount: UILabel!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
@@ -82,10 +81,9 @@ class ListViewController: UIViewController, UITableViewDelegate, UISearchBarDele
             if let keyword3 = item.keyword3 {
                 keywordStr.append(keyword3)
             }
-            keywordsData.append(["keywords": keywordStr, "Date": formatter.string(for: item.date) ?? "", "id": item.objectID])
+            keywordsData.append(["keywords": keywordStr, "Date": formatter.string(for: item.date) ?? "", "id": item.objectID, "bookmark": item.bookmark])
         }
         filteredData = keywordsData
-        print(keywordsData)
         
         self.tableView.reloadData()
         
@@ -97,7 +95,6 @@ class ListViewController: UIViewController, UITableViewDelegate, UISearchBarDele
         
         naviFont()
         addButton.floatinBtn()
-        filterButton.filterBtn()
         tableView.backgroundColor = UIColor.clear
         
         let emptyImg = UIImage()
@@ -113,6 +110,25 @@ class ListViewController: UIViewController, UITableViewDelegate, UISearchBarDele
     
     override func viewDidAppear(_ animated: Bool) {
         boardCount.text = "총 \(DataManager.shared.boarList.count)개의 보드"
+    }
+    
+    //북마크 정렬
+    @IBAction func didChangeSegment(_ sender: UISegmentedControl) {
+        filteredData = []
+        
+        if sender.selectedSegmentIndex == 0 {
+            for item in DataManager.shared.boarList {
+                filteredData.append(["date": item.date, "keywords": "\(item.keyword2), \(item.keyword3)","id": item.id, "bookmarked": item.bookmark])
+            }
+        } else if sender.selectedSegmentIndex == 1 {
+            
+            filteredData = DataManager.shared.boarList.filter { (item) -> Bool in
+                    return (item["bookmark"] != nil) == true
+            }
+            print(filteredData)
+        }
+        
+        self.tableView.reloadData()
     }
 }
 
