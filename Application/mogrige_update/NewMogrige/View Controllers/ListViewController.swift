@@ -111,25 +111,23 @@ class ListViewController: UIViewController, UITableViewDelegate, UISearchBarDele
     override func viewDidAppear(_ animated: Bool) {
         boardCount.text = "총 \(DataManager.shared.boarList.count)개의 보드"
     }
-    
+  
     //북마크 정렬
     @IBAction func didChangeSegment(_ sender: UISegmentedControl) {
+        
         filteredData = []
         
         if sender.selectedSegmentIndex == 0 {
-            for item in DataManager.shared.boarList {
-                filteredData.append(["date": item.date, "keywords": "\(item.keyword2), \(item.keyword3)","id": item.id, "bookmarked": item.bookmark])
-            }
+            filteredData = keywordsData
         } else if sender.selectedSegmentIndex == 1 {
-            
-            filteredData = DataManager.shared.boarList.filter { (item) -> Bool in
-                    return (item["bookmark"] != nil) == true
+            filteredData = keywordsData.filter { (item) -> Bool in
+                return (item["bookmark"] as! Bool) == true
             }
             print(filteredData)
         }
-        
         self.tableView.reloadData()
     }
+    
 }
 
 extension ListViewController: UITableViewDataSource {

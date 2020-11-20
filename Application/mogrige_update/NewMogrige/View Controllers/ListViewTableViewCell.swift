@@ -49,7 +49,6 @@ class ListViewTableViewCell: UITableViewCell {
             
         }
         saveBool(bool: buttonIsSelected)
-
     }
 
 //    //save to core data
@@ -65,7 +64,6 @@ class ListViewTableViewCell: UITableViewCell {
         let liked = DataManager.shared.mainContext.object(with: objectId) as! Board
         liked.bookmark = bool
         DataManager.shared.saveContext()
-        
     }
     
     override func awakeFromNib() {
