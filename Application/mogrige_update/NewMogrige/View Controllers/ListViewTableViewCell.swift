@@ -49,7 +49,6 @@ class ListViewTableViewCell: UITableViewCell {
             
         }
         saveBool(bool: buttonIsSelected)
-
     }
 
 //    //save to core data
@@ -65,7 +64,6 @@ class ListViewTableViewCell: UITableViewCell {
         let liked = DataManager.shared.mainContext.object(with: objectId) as! Board
         liked.bookmark = bool
         DataManager.shared.saveContext()
-        
     }
     
     override func awakeFromNib() {
@@ -81,6 +79,9 @@ class ListViewTableViewCell: UITableViewCell {
         bottomLine1.frame = CGRect(x: 0.0, y: self.dateLabel.frame.size.height + 5, width: self.dateLabel.frame.width, height: thickness)
         bottomLine1.backgroundColor = UIColor(red: 190/255, green: 190/255, blue: 190/255, alpha: 1).cgColor
         dateLabel.layer.addSublayer(bottomLine1)
+        
+        //버튼 컬러 변경
+        bookmarkBtn.tintColor = UIColor(red: 204/255, green: 192/255, blue: 162/255, alpha: 1)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
