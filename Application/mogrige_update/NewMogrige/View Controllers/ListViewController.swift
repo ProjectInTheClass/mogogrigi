@@ -67,23 +67,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UISearchBarDele
             NotificationCenter.default.post(name: EditorViewController.newListDidInsert, object: nil)
         }
         
-        keywordsData = []
-        for item in DataManager.shared.boarList {
-            var keywordStr = ""
-            if let keyword1 = item.keyword1 {
-                keywordStr.append(keyword1)
-                keywordStr.append(", ")
-            }
-            if let keyword2 = item.keyword2 {
-                keywordStr.append(keyword2)
-                keywordStr.append(", ")
-            }
-            if let keyword3 = item.keyword3 {
-                keywordStr.append(keyword3)
-            }
-            keywordsData.append(["keywords": keywordStr, "Date": formatter.string(for: item.date) ?? "", "id": item.objectID, "bookmark": item.bookmark])
-        }
-        filteredData = keywordsData
+        saveData()
         
         self.tableView.reloadData()
         
@@ -114,9 +98,9 @@ class ListViewController: UIViewController, UITableViewDelegate, UISearchBarDele
   
     //북마크 정렬
     @IBAction func didChangeSegment(_ sender: UISegmentedControl) {
-        
-        filteredData = []
-        
+                
+        //filteredData = keywordsData
+        saveData()
         if sender.selectedSegmentIndex == 0 {
             filteredData = keywordsData
         } else if sender.selectedSegmentIndex == 1 {
@@ -126,6 +110,26 @@ class ListViewController: UIViewController, UITableViewDelegate, UISearchBarDele
             print(filteredData)
         }
         self.tableView.reloadData()
+    }
+    
+    func saveData() {
+        keywordsData = []
+        for item in DataManager.shared.boarList {
+            var keywordStr = ""
+            if let keyword1 = item.keyword1 {
+                keywordStr.append(keyword1)
+                keywordStr.append(", ")
+            }
+            if let keyword2 = item.keyword2 {
+                keywordStr.append(keyword2)
+                keywordStr.append(", ")
+            }
+            if let keyword3 = item.keyword3 {
+                keywordStr.append(keyword3)
+            }
+            keywordsData.append(["keywords": keywordStr, "Date": formatter.string(for: item.date) ?? "", "id": item.objectID, "bookmark": item.bookmark])
+        }
+        filteredData = keywordsData
     }
     
 }
