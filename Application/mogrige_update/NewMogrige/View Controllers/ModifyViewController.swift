@@ -14,7 +14,7 @@ class ModifyViewController: UIViewController, UITextViewDelegate {
     var editTarget: Board?
     var selectedImg: [UIImage] = []
     var prepareTitle: [String] = []
-    var legacyImg:[UIImage] = []
+    var legacyImg: [UIImage] = []
     
     let imagePicker: UIImagePickerController! = UIImagePickerController()
     
@@ -47,6 +47,7 @@ class ModifyViewController: UIViewController, UITextViewDelegate {
     @IBAction func save(_ sender: Any) {
         
         prepareTitle = [((editTarget?.keyword1)!), ((editTarget?.keyword2)!), ((editTarget?.keyword3)!)]
+        var bookmark = editTarget!.bookmark
         
         if legacyImg.count < 5{
                     let photoAlert = UIAlertController(title: "", message: "반드시 5장의 사진을 선택해주세요.", preferredStyle: UIAlertController.Style.alert)
@@ -56,7 +57,7 @@ class ModifyViewController: UIViewController, UITextViewDelegate {
                 } else {
                     //코어데이터 전달
                     DataManager.shared.deletBoard(self.editTarget)
-                    DataManager.shared.addnewBoard(prepareTitle[0], prepareTitle[1], prepareTitle[2], paraMainText: mainDescription.text, paraSubText: subDescription.text, legacyImg, false)
+                    DataManager.shared.addnewBoard(prepareTitle[0], prepareTitle[1], prepareTitle[2], paraMainText: mainDescription.text, paraSubText: subDescription.text, legacyImg, bookmark)
                     NotificationCenter.default.post(name: EditorViewController.newListDidInsert, object: nil)
                     performSegue(withIdentifier: "UnwindToHome", sender: self)
                     //DataManager.shared.saveContext()

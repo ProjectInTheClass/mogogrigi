@@ -67,7 +67,8 @@ class ListViewController: UIViewController, UITableViewDelegate, UISearchBarDele
             
             NotificationCenter.default.post(name: EditorViewController.newListDidInsert, object: nil)
         }
-        /*
+        
+        keywordsData = []
         for item in DataManager.shared.boarList {
             var keywordStr = ""
             if let keyword1 = item.keyword1 {
@@ -85,7 +86,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UISearchBarDele
         }
         filteredData = keywordsData
         print(keywordsData)
-        */
+        
         self.tableView.reloadData()
         
     }
@@ -107,6 +108,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UISearchBarDele
         token = NotificationCenter.default.addObserver(forName: EditorViewController.newListDidInsert, object: nil, queue: OperationQueue.main) {[weak self] (noti) in
             self?.tableView.reloadData()
         }
+        self.searchBar.delegate = self
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -116,24 +118,24 @@ class ListViewController: UIViewController, UITableViewDelegate, UISearchBarDele
 
 extension ListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return DataManager.shared.boarList.count
+        return filteredData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ListViewTableViewCell
-        
+        /*
         let target = DataManager.shared.boarList[indexPath.row]
         cell.keywordTitle?.text = "\((target.keyword1!)), \((target.keyword2!)), \((target.keyword3!))"
         cell.dateLabel?.text = formatter.string(for: target.date)
         cell.objectId = target.objectID
         cell.configure()
-        /*
+        */
         let postListCell = filteredData[indexPath.row]
         cell.keywordTitle?.text = postListCell["keywords"] as? String
         cell.dateLabel.text = (postListCell["Date"] as? String) ?? ""
         cell.objectId = (postListCell["id"] as! NSManagedObjectID)
         cell.configure()
-        */
+        
         
         return cell
         
@@ -162,7 +164,7 @@ extension ListViewController: UITableViewDataSource {
         }
     }
     */
-    /*
+    
     //searchbar config
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
@@ -177,6 +179,6 @@ extension ListViewController: UITableViewDataSource {
         }
         self.tableView.reloadData()
     }
-    */
+    
     
 }
