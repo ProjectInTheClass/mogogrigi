@@ -90,6 +90,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UISearchBarDele
             self?.tableView.reloadData()
         }
         self.searchBar.delegate = self
+        self.searchBar.placeholder = "내가 저장한 단어 중에서 찾아드립니다."
     }
     
     override func viewDidAppear(_ animated: Bool) {
