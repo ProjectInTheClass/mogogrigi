@@ -195,8 +195,8 @@ class EditorViewController: UIViewController, UIImagePickerControllerDelegate, U
         if mainDescription?.text == placeHolder[0] {
             mainDescription?.text = nil
             mainDescription?.textColor = UIColor.black
-        } else if mainDescription?.text == "" {
-            mainDescription?.text = placeHolder[1]
+        } else if mainDescription?.text == nil {
+            mainDescription?.text = placeHolder[0]
             mainDescription?.textColor = UIColor.lightGray
         }
     }
