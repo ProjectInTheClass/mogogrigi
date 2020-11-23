@@ -24,12 +24,8 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
-	<key>NSCameraUsageDescription</key>
-	<string></string>
-	<key>NSMicrophoneUsageDescription</key>
-	<string></string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string></string>
+	<string>Photo Library is required for moodboard use. 무드보드 사용을 위해 포토라이브러리가 필요합니다.</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>NotoSerifCJKkr-Bold</string>
