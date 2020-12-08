@@ -201,28 +201,6 @@ class DetailViewController: UIViewController, UIScrollViewDelegate {
         
         //frame5 백그라운드 컬러
         self.frame5.backgroundColor = UIColor.init(red: 241/255, green: 241/255, blue: 241/255, alpha: 1)
-        
-        
-    }
-    
-    // UIView 캡쳐하기 - 문제는 빈UIView가 캡쳐됨 허허허...
-    override func viewDidAppear(_ animated: Bool) {
-        let snapshot1 = section1.snapshotView(afterScreenUpdates: true)
-        let snapshot2 = section2.snapshotView(afterScreenUpdates: true)
-                        
-        func thumbImage1() -> UIImage {
-            let renderer = UIGraphicsImageRenderer(bounds: snapshot1!.bounds)
-            return renderer.image { context in
-                snapshot1!.layer.render(in: context.cgContext)}
-            }
-        capture.append(thumbImage1())
-
-        func thumbImage2() -> UIImage {
-            let renderer = UIGraphicsImageRenderer(bounds: snapshot2!.bounds)
-            return renderer.image { context in
-                snapshot2!.layer.render(in: context.cgContext)}
-            }
-        capture.append(thumbImage2())
     }
     
     // toast messge setting
@@ -244,9 +222,50 @@ class DetailViewController: UIViewController, UIScrollViewDelegate {
         })
     }
     
+    /*
+    // UIView 캡쳐하기 - 문제는 빈UIView가 캡쳐됨 허허허...
+    func capturImg() {
+        let snapshot1 = section1.snapshotView(afterScreenUpdates: true)
+        let snapshot2 = section2.snapshotView(afterScreenUpdates: true)
+                        
+        func thumbImage1() -> UIImage {
+            let renderer = UIGraphicsImageRenderer(bounds: snapshot1!.bounds)
+            return renderer.image { context in
+                snapshot1!.layer.render(in: context.cgContext)}
+            }
+        capture.append(thumbImage1())
+
+        func thumbImage2() -> UIImage {
+            let renderer = UIGraphicsImageRenderer(bounds: snapshot2!.bounds)
+            return renderer.image { context in
+                snapshot2!.layer.render(in: context.cgContext)}
+            }
+        capture.append(thumbImage2())
+        
+        print(capture)
+    }
+    */
+    
+    func capturImg() {
+        
+        let renderer1 = UIGraphicsImageRenderer(size: section1.bounds.size)
+        let image1 = renderer1.image { ctx in
+            section1.drawHierarchy(in: section1.bounds, afterScreenUpdates: true)
+        }
+        capture.append(image1)
+        
+        let renderer2 = UIGraphicsImageRenderer(size: section1.bounds.size)
+        let image2 = renderer2.image { ctx in
+            section2.drawHierarchy(in: section2.bounds, afterScreenUpdates: true)
+        }
+        capture.append(image2)
+    }
+    
     
     // 공유하기 버튼
     @IBAction func share(_ sender: Any) {
+        
+        capturImg()
         
         let activityVC = UIActivityViewController(activityItems: capture, applicationActivities: nil)
         activityVC.popoverPresentationController?.sourceView = self.view

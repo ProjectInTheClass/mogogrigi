@@ -30,6 +30,11 @@
 	<string>무드보드에 레퍼런스 삼을 사진들을 등록하기 위해 카메라에 접근이 필요합니다</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>무드보드에 레퍼런스 삼을 사진들을 등록하기 위해 마이크에 접근이 필요합니다</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 	<key>UIAppFonts</key>
 	<array>
 		<string>NotoSerifCJKkr-Bold</string>
