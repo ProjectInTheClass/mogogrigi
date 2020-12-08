@@ -204,8 +204,8 @@ class DetailViewController: UIViewController, UIScrollViewDelegate {
     }
     
     // toast messge setting
-    func showToast(messge: String, font: UIFont = UIFont.systemFont(ofSize: 14.0)){
-        let toastLabel = UILabel(frame: CGRect(x: self.view.frame.size.width/2 - 75, y: self.view.frame.size.height-100,width: 150, height: 35))
+    func showToast(messge: String, font: UIFont = UIFont.systemFont(ofSize: 14.0)) {
+        let toastLabel = UILabel(frame: CGRect(x: self.view.frame.size.width/2 - 75, y: self.view.frame.size.height-100, width: 150, height: 35))
         toastLabel.backgroundColor = UIColor.black.withAlphaComponent(0.6)
         toastLabel.textColor = UIColor.white
         toastLabel.font = font
@@ -214,37 +214,15 @@ class DetailViewController: UIViewController, UIScrollViewDelegate {
         toastLabel.alpha = 1.0
         toastLabel.layer.cornerRadius = 10;
         toastLabel.clipsToBounds = true
-        self.view.clipsToBounds = true
+        self.view.addSubview(toastLabel)
         UIView.animate(withDuration: 4.0, delay: 0.1, options: .curveEaseOut, animations: {
             toastLabel.alpha = 0.0
         }, completion: {(isCompleted) in
             toastLabel.removeFromSuperview()
         })
     }
-    
-    /*
-    // UIView 캡쳐하기 - 문제는 빈UIView가 캡쳐됨 허허허...
-    func capturImg() {
-        let snapshot1 = section1.snapshotView(afterScreenUpdates: true)
-        let snapshot2 = section2.snapshotView(afterScreenUpdates: true)
-                        
-        func thumbImage1() -> UIImage {
-            let renderer = UIGraphicsImageRenderer(bounds: snapshot1!.bounds)
-            return renderer.image { context in
-                snapshot1!.layer.render(in: context.cgContext)}
-            }
-        capture.append(thumbImage1())
 
-        func thumbImage2() -> UIImage {
-            let renderer = UIGraphicsImageRenderer(bounds: snapshot2!.bounds)
-            return renderer.image { context in
-                snapshot2!.layer.render(in: context.cgContext)}
-            }
-        capture.append(thumbImage2())
-        
-        print(capture)
-    }
-    */
+    
     
     func capturImg() {
         
