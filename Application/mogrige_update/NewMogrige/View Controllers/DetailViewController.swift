@@ -15,6 +15,7 @@ class DetailViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var frame4: UIView!
     @IBOutlet weak var frame5: UIView!
     @IBOutlet weak var section1: UIView!
+    @IBOutlet weak var section2: UIView!
     
     @IBOutlet weak var moodboardImg1: UIImageView!
     @IBOutlet weak var moodboardImg2: UIImageView!
@@ -38,6 +39,7 @@ class DetailViewController: UIViewController, UIScrollViewDelegate {
     
 
     var frame = CGRect.zero
+    var capture:[UIImage] = []
     
     var board: Board?
     
@@ -199,9 +201,67 @@ class DetailViewController: UIViewController, UIScrollViewDelegate {
         
         //frame5 백그라운드 컬러
         self.frame5.backgroundColor = UIColor.init(red: 241/255, green: 241/255, blue: 241/255, alpha: 1)
-        
-        
     }
     
+    // toast messge setting
+    func showToast(messge: String, font: UIFont = UIFont.systemFont(ofSize: 14.0)) {
+        let toastLabel = UILabel(frame: CGRect(x: self.view.frame.size.width/2 - 75, y: self.view.frame.size.height-100, width: 150, height: 35))
+        toastLabel.backgroundColor = UIColor.black.withAlphaComponent(0.6)
+        toastLabel.textColor = UIColor.white
+        toastLabel.font = font
+        toastLabel.textAlignment = .center;
+        toastLabel.text = messge
+        toastLabel.alpha = 1.0
+        toastLabel.layer.cornerRadius = 10;
+        toastLabel.clipsToBounds = true
+        self.view.addSubview(toastLabel)
+        UIView.animate(withDuration: 4.0, delay: 0.1, options: .curveEaseOut, animations: {
+            toastLabel.alpha = 0.0
+        }, completion: {(isCompleted) in
+            toastLabel.removeFromSuperview()
+        })
+    }
 
+    
+    
+    func capturImg() {
+        
+        let renderer1 = UIGraphicsImageRenderer(size: section1.bounds.size)
+        let image1 = renderer1.image { ctx in
+            section1.drawHierarchy(in: section1.bounds, afterScreenUpdates: true)
+        }
+        capture.append(image1)
+        
+        let renderer2 = UIGraphicsImageRenderer(size: section1.bounds.size)
+        let image2 = renderer2.image { ctx in
+            section2.drawHierarchy(in: section2.bounds, afterScreenUpdates: true)
+        }
+        capture.append(image2)
+    }
+    
+    
+    // 공유하기 버튼
+    @IBAction func share(_ sender: Any) {
+        
+        capturImg()
+        
+        let activityVC = UIActivityViewController(activityItems: capture, applicationActivities: nil)
+        activityVC.popoverPresentationController?.sourceView = self.view
+        
+        self.present(activityVC, animated: true)
+        
+        activityVC.completionWithItemsHandler = { (activityType: UIActivity.ActivityType?, completed: Bool, arrayReturnedItems: [Any]?, error: Error?) in
+            if completed {
+                self.showToast(messge: "share success")
+            } else {
+                self.showToast(messge: "share cancel")
+            }
+            if let shareError = error {
+                self.showToast(messge: "\(shareError.localizedDescription)")
+            }
+        }
+        
+        }
+    
+        
 }
