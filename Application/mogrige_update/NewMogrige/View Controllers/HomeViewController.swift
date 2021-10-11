@@ -46,8 +46,13 @@ class ViewController: UIViewController {
             animate()
         }
         
+<<<<<<< HEAD:Application/mogrige_update/NewMogrige/View Controllers/HomeViewController.swift
         //스와이프 가이드메세지 적용
         if xFromCenter < 0 {
+=======
+        //******. 저장합니다는 잘되는데 다음키워드는 어느 x좌표의 순간! 지진이 나네요. ******
+        if card.center.x < 0 {
+>>>>>>> d5e25cf5a432b49d8ef17d8f42eeb4e7eea6f6f5:Application/mogrige_update/mogrige/viewController/ViewController.swift
             randomTip.text = "다음 키워드"
         } else if xFromCenter > 0 {
             randomTip.text = "저장합니다"
